@@ -1,0 +1,38 @@
+/* Tablet */
+@media (max-width: 992px) {
+
+    .slide {
+        width: 220px;
+        height: 300px;
+    }
+
+    .slide.active {
+        width: 320px;
+        height: 420px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .slider-container {
+        height: 400px;
+    }
+
+    /* On mobile show only center clearly */
+    .slide {
+        width: 180px;
+        height: 250px;
+        margin: 0 10px;
+    }
+
+    .slide.active {
+        width: 260px;
+        height: 360px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
