@@ -41,8 +41,6 @@ align-items:center;
 padding:18px 6%;
 }
 
-/* LOGO WITH HEART + ECG */
-
 .logo{
 display:flex;
 align-items:center;
@@ -58,12 +56,10 @@ color:#e63946;
 font-size:1.6rem;
 }
 
-/* NAV MENU PROFESSIONAL */
-
 .nav-menu{
 display:flex;
 gap:35px;
-list-style:none;   /* REMOVE BULLETS */
+list-style:none;
 }
 
 .nav-link{
@@ -73,6 +69,7 @@ font-size:1rem;
 color:#333;
 transition:.3s;
 padding-bottom:5px;
+text-decoration:none;
 }
 
 .nav-link::after{
@@ -101,6 +98,7 @@ padding:10px 22px;
 border-radius:4px;
 font-weight:500;
 transition:.3s;
+text-decoration:none;
 }
 
 .btn:hover{
@@ -113,13 +111,13 @@ background:var(--secondary);
 /* ================= HERO ================= */
 
 .hero{
-height:100vh;
+height:calc(100vh - 80px);
 margin-top:80px;
 display:flex;
 justify-content:center;
 align-items:center;
 background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80') center/cover;
+url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
 overflow:hidden;
 }
 
@@ -172,7 +170,7 @@ transform:translateY(0);
 opacity:1;
 }
 
-/* ================= SLIDER BUTTONS FIXED ================= */
+/* ================= SLIDER BUTTONS ================= */
 
 .nav-btn{
 position:absolute;
@@ -181,12 +179,12 @@ transform:translateY(-50%);
 width:55px;
 height:55px;
 border-radius:50%;
-background:rgba(0,0,0,0.6); /* DARKER FOR VISIBILITY */
+background:rgba(0,0,0,0.6);
 border:none;
 color:white;
 cursor:pointer;
 font-size:1.3rem;
-z-index:999;   /* FORCE FRONT */
+z-index:999;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -197,8 +195,8 @@ transition:.3s;
 background:var(--primary);
 }
 
-.prev{left:-70px;}
-.next{right:-70px;}
+.prev{left:15px;}
+.next{right:15px;}
 
 /* DOTS */
 
@@ -258,16 +256,16 @@ MediCarePlus
 </div>
 
 <ul class="nav-menu">
-<li><a href="#" class="nav-link">Home</a></li>
-<li><a href="#" class="nav-link">Speciality</a></li>
-<li><a href="#" class="nav-link">Facilities</a></li>
-<li><a href="#" class="nav-link">Departments</a></li>
-<li><a href="#" class="nav-link">Contact</a></li>
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="speciality.html" class="nav-link">Speciality</a></li>
+<li><a href="facilities.html" class="nav-link">Facilities</a></li>
+<li><a href="departments.html" class="nav-link">Departments</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
 </ul>
 
-<a href="#" class="btn">Appointment</a>
+<a href="appointment.html" class="btn">Appointment</a>
 
-<div class="hamburger">
+<div class="hamburger" aria-label="Toggle Menu">
 <div class="bar"></div>
 <div class="bar"></div>
 <div class="bar"></div>
@@ -276,13 +274,15 @@ MediCarePlus
 </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 <div class="slider">
 
-<button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+<button class="nav-btn prev" aria-label="Previous Slide">
+<i class="fas fa-chevron-left"></i>
+</button>
 
 <div class="slide active">
-<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80" alt="World class hospital interior" loading="lazy">
 <div class="slide-content">
 <h2>World Class Care</h2>
 <p>Advanced technology with compassion</p>
@@ -290,7 +290,7 @@ MediCarePlus
 </div>
 
 <div class="slide">
-<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="24 hour emergency care unit" loading="lazy">
 <div class="slide-content">
 <h2>24/7 Emergency</h2>
 <p>Immediate critical care services</p>
@@ -298,14 +298,16 @@ MediCarePlus
 </div>
 
 <div class="slide">
-<img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1200&q=80" alt="Professional surgeons performing operation" loading="lazy">
 <div class="slide-content">
 <h2>Expert Surgeons</h2>
 <p>Globally certified professionals</p>
 </div>
 </div>
 
-<button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+<button class="nav-btn next" aria-label="Next Slide">
+<i class="fas fa-chevron-right"></i>
+</button>
 
 <div class="dots"></div>
 
@@ -317,7 +319,19 @@ MediCarePlus
 /* NAV TOGGLE */
 const hamburger=document.querySelector(".hamburger");
 const navMenu=document.querySelector(".nav-menu");
-hamburger.addEventListener("click",()=>navMenu.classList.toggle("active"));
+
+if(hamburger){
+hamburger.addEventListener("click",()=>{
+navMenu.classList.toggle("active");
+});
+}
+
+/* Close mobile menu on link click */
+document.querySelectorAll(".nav-link").forEach(link=>{
+link.addEventListener("click",()=>{
+navMenu.classList.remove("active");
+});
+});
 
 /* SLIDER */
 const slides=document.querySelectorAll(".slide");
@@ -361,25 +375,41 @@ current=index;
 updateSlides();
 }
 
+if(nextBtn && prevBtn){
 nextBtn.addEventListener("click",nextSlide);
 prevBtn.addEventListener("click",prevSlide);
+}
 
-function startAuto(){autoSlide=setInterval(nextSlide,5000);}
-function stopAuto(){clearInterval(autoSlide);}
+function startAuto(){
+stopAuto();
+autoSlide=setInterval(nextSlide,5000);
+}
+
+function stopAuto(){
+clearInterval(autoSlide);
+}
 
 startAuto();
 
-document.querySelector(".slider").addEventListener("mouseenter",stopAuto);
-document.querySelector(".slider").addEventListener("mouseleave",startAuto);
+const slider=document.querySelector(".slider");
+
+slider.addEventListener("mouseenter",stopAuto);
+slider.addEventListener("mouseleave",startAuto);
+
+/* KEYBOARD SUPPORT */
+document.addEventListener("keydown",(e)=>{
+if(e.key==="ArrowRight") nextSlide();
+if(e.key==="ArrowLeft") prevSlide();
+});
 
 /* SWIPE */
 let startX=0;
 
-document.querySelector(".slider").addEventListener("touchstart",e=>{
+slider.addEventListener("touchstart",e=>{
 startX=e.touches[0].clientX;
 });
 
-document.querySelector(".slider").addEventListener("touchend",e=>{
+slider.addEventListener("touchend",e=>{
 let endX=e.changedTouches[0].clientX;
 let diff=startX-endX;
 if(diff>50) nextSlide();
