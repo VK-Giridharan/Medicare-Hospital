@@ -1,0 +1,554 @@
+/* ============================================
+   RESPONSIVE STYLES - MediCare Plus
+   Professional Optimized Version
+   ============================================ */
+
+
+/* ============================================
+   GLOBAL SAFETY IMPROVEMENTS
+   ============================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+    margin: auto;
+}
+
+
+/* ============================================
+   TABLET (max-width: 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    /* Slider */
+    .slider-container {
+        max-width: 700px;
+        height: 400px;
+    }
+
+    .slide {
+        width: 70%;
+    }
+
+    .slide.active {
+        width: 70%;
+        margin-left: -35%;
+    }
+
+    .slide.left {
+        transform: translateX(-120px) scale(0.7);
+    }
+
+    .slide.right {
+        transform: translateX(120px) scale(0.7);
+    }
+
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+    }
+
+    /* Quick Info */
+    .quick-info {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .info-box {
+        flex: 1 1 250px;
+    }
+
+    /* Zigzag */
+    .zigzag-content {
+        padding: 20px 25px;
+        margin: 0 -30px;
+    }
+
+    .zigzag-item.reverse .zigzag-content {
+        margin: 0 -30px 0 0;
+    }
+
+    /* Grid Layouts */
+    .about-grid,
+    .contact-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Slider Buttons */
+    .slider-btn {
+        width: 45px;
+        height: 45px;
+        z-index: 5;
+    }
+
+    .prev-btn {
+        left: -60px;
+    }
+
+    .next-btn {
+        right: -60px;
+    }
+}
+
+
+/* ============================================
+   MOBILE (max-width: 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    /* Hamburger */
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        height: calc(100vh - 70px);
+        text-align: center;
+        transition: 0.3s;
+        padding-top: 30px;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .btn-appointment {
+        display: none;
+    }
+
+    /* Hero */
+    .hero-section {
+        height: 80vh;
+        padding-top: 70px;
+    }
+
+    .slider-container {
+        max-width: 95%;
+        height: 350px;
+    }
+
+    .slide {
+        width: 85%;
+        height: 90%;
+    }
+
+    .slide.active {
+        width: 85%;
+        margin-left: -42.5%;
+    }
+
+    .slide.left,
+    .slide.right {
+        display: none;
+    }
+
+    .slide-content {
+        padding: 25px;
+        text-align: center;
+    }
+
+    .slide-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .slide-content p {
+        display: none;
+    }
+
+    .slide-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Navigation Buttons */
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        z-index: 5;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
+
+    /* Quick Info */
+    .quick-info {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-box {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding: 100px 0 40px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    /* Zigzag */
+    .zigzag-section {
+        padding: 40px 15px;
+    }
+
+    .zigzag-item,
+    .zigzag-item.reverse {
+        flex-direction: column;
+    }
+
+    .zigzag-image img {
+        height: 200px;
+    }
+
+    .zigzag-content {
+        width: 100%;
+        margin: -30px 10px 0 10px;
+        padding: 20px;
+    }
+
+    .zigzag-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .zigzag-content ul li {
+        font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Forms */
+    .contact-form {
+        padding: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 12px;
+    }
+}
+
+
+/* ============================================
+   SMALL MOBILE (max-width: 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .hero-section {
+        height: 70vh;
+    }
+
+    .slider-container {
+        height: 280px;
+    }
+
+    .slide-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .zigzag-content {
+        padding: 15px;
+    }
+
+    .zigzag-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .zigzag-content ul li {
+        font-size: 0.85rem;
+    }
+
+    .read-more {
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ============================================
+   ULTRA SMALL (max-width: 320px)
+   ============================================ */
+
+@media (max-width: 320px) {
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .slider-container {
+        height: 240px;
+    }
+
+    .slide-content {
+        padding: 15px;
+    }
+
+    .slide-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .slide-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .zigzag-content h2 {
+        font-size: 1rem;
+    }
+}
+
+
+/* ============================================
+   LANDSCAPE MOBILE
+   ============================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero-section {
+        height: auto;
+        padding: 100px 20px;
+    }
+
+    .slider-container {
+        height: 250px;
+    }
+
+    .slide-content p {
+        display: none;
+    }
+}
+
+
+/* ============================================
+   HIGH RESOLUTION (min-width: 1400px)
+   ============================================ */
+
+@media (min-width: 1400px) {
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .slider-container {
+        max-width: 1200px;
+        height: 600px;
+    }
+
+    .slide-content h2 {
+        font-size: 3rem;
+    }
+
+    .slide-content p {
+        font-size: 1.3rem;
+    }
+
+    .navbar {
+        padding: 20px 8%;
+    }
+
+    .nav-menu {
+        gap: 35px;
+    }
+
+    .page-header {
+        padding: 150px 0 80px;
+    }
+
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .zigzag-image img {
+        height: 400px;
+    }
+
+    .zigzag-content {
+        padding: 40px 50px;
+    }
+}
+
+
+/* ============================================
+   LARGE DESKTOP (min-width: 1920px)
+   ============================================ */
+
+@media (min-width: 1920px) {
+
+    .slider-container {
+        max-width: 1400px;
+        height: 700px;
+    }
+
+    .slide-content h2 {
+        font-size: 3.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 4rem;
+    }
+
+    .zigzag-image img {
+        height: 450px;
+    }
+
+    .zigzag-content {
+        padding: 50px 60px;
+        margin: 0 -80px;
+    }
+
+    .zigzag-item.reverse .zigzag-content {
+        margin: 0 -80px 0 0;
+    }
+}
+
+
+/* ============================================
+   PRINT
+   ============================================ */
+
+@media print {
+
+    .header,
+    .hamburger,
+    .slider-btn,
+    .quick-info,
+    .footer,
+    .modal {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .zigzag-item {
+        page-break-inside: avoid;
+    }
+
+    .zigzag-content {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+
+/* ============================================
+   REDUCED MOTION (Accessibility)
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
