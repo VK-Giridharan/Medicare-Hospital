@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departments | MediCare Plus</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* ================= DESIGN SYSTEM ================= */
+
+:root{
+--primary:#009688;
+--secondary:#004d40;
+--light:#f4f9f9;
+--text:#333;
+--muted:#666;
+--white:#fff;
+--shadow:0 10px 30px rgba(0,0,0,0.08);
+--transition:all .4s ease;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:var(--light);color:var(--text);}
+
+/* ================= HEADER ================= */
+
+.header{
+background:white;
+box-shadow:var(--shadow);
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:700;
+color:var(--primary);
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.nav-menu{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-link{
+text-decoration:none;
+color:var(--text);
+position:relative;
+padding-bottom:6px;
+transition:var(--transition);
+}
+
+.nav-link::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0;
+height:2px;
+background:var(--primary);
+transition:var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+width:100%;
+}
+
+.nav-link:hover,
+.nav-link.active{
+color:var(--primary);
+}
+
+.hamburger{display:none;cursor:pointer;}
+.bar{width:25px;height:3px;background:#333;margin:5px;}
+
+/* ================= PAGE HEADER ================= */
+
+.page-header{
+background:linear-gradient(rgba(0,77,64,0.85),rgba(0,150,136,0.8)),
+url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80') center/cover;
+padding:130px 0 70px;
+text-align:center;
+color:white;
+margin-top:70px;
+}
+
+.page-header h1{
+font-size:2.8rem;
+margin-bottom:10px;
+}
+
+/* ================= DEPARTMENT GRID ================= */
+
+.departments{
+padding:80px 6%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.department-card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:var(--transition);
+cursor:pointer;
+}
+
+.department-card:hover{
+transform:translateY(-8px);
+}
+
+.department-image img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.department-content{
+padding:25px;
+}
+
+.department-content h2{
+color:var(--secondary);
+margin-bottom:15px;
+font-size:1.2rem;
+display:flex;
+gap:8px;
+align-items:center;
+}
+
+.department-content h2 i{
+color:var(--primary);
+}
+
+.department-content ul{
+margin-bottom:12px;
+}
+
+.department-content ul li{
+font-size:0.9rem;
+padding:4px 0;
+color:var(--muted);
+}
+
+.read-more{
+font-size:0.85rem;
+color:var(--primary);
+font-weight:600;
+}
+
+/* Expand */
+
+.expand-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .5s ease;
+font-size:0.9rem;
+color:var(--muted);
+margin-top:10px;
+line-height:1.6;
+}
+
+.department-card.active .expand-content{
+max-height:220px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hamburger{display:block;}
+
+.nav-menu{
+position:fixed;
+left:-100%;
+top:70px;
+flex-direction:column;
+background:white;
+width:100%;
+height:calc(100vh - 70px);
+padding-top:30px;
+transition:.3s;
+}
+
+.nav-menu.active{left:0;}
+
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+<nav class="navbar">
+<a href="index.html" class="logo">
+<i class="fas fa-heartbeat"></i> MediCare<span style="color:#004d40;">Plus</span>
+</a>
+
+<ul class="nav-menu">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="speciality.html" class="nav-link">Speciality</a></li>
+<li><a href="facilities.html" class="nav-link">Facilities</a></li>
+<li><a href="departments.html" class="nav-link active">Departments</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+
+<div class="hamburger">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+</nav>
+</header>
+
+<section class="page-header">
+<h1>Our Departments</h1>
+<p>Dedicated Specialized Medical Units</p>
+</section>
+
+<section class="departments">
+
+<!-- OBSTETRICS -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-baby"></i> Obstetrics</h2>
+<ul>
+<li>Normal & Cesarean Delivery</li>
+<li>High-Risk Pregnancy</li>
+<li>Ante & Post Natal Care</li>
+<li>Ultrasound Monitoring</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">
+Advanced maternity department providing safe pregnancy monitoring, delivery services and emergency obstetric support.
+</div>
+</div>
+</div>
+
+<!-- GYNAECOLOGY -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-female"></i> Gynaecology</h2>
+<ul>
+<li>PCOD/PCOS Management</li>
+<li>Fibroid Treatment</li>
+<li>Laparoscopic Hysterectomy</li>
+<li>Menopause Care</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">
+Comprehensive women’s healthcare including hormonal disorders, minimally invasive surgery and preventive screenings.
+</div>
+</div>
+</div>
+
+<!-- ULTRASOUND -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-wave-square"></i> Ultrasound (Scan)</h2>
+<ul>
+<li>Pregnancy Scans</li>
+<li>Abdominal Scans</li>
+<li>Pelvic Scan</li>
+<li>Diagnostic Imaging</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">
+High-precision ultrasound imaging services for accurate diagnosis and pregnancy monitoring using advanced scanning equipment.
+</div>
+</div>
+</div>
+
+<!-- Add remaining departments in same pattern -->
+
+</section>
+
+<script>
+
+const hamburger=document.querySelector(".hamburger");
+const navMenu=document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click",()=>{
+navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-link").forEach(link=>{
+link.addEventListener("click",()=>{
+navMenu.classList.remove("active");
+});
+});
+
+document.querySelectorAll(".department-card").forEach(card=>{
+card.addEventListener("click",()=>{
+card.classList.toggle("active");
+});
+});
+
+</script>
+
+</body>
+</html>
