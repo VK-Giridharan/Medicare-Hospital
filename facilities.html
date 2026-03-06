@@ -1,464 +1,545 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facilities | MediCare Plus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities | MediCare Plus</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
+    <style>
+        /* ===== VARIABLES ===== */
 
-/* ===== VARIABLES ===== */
-:root{
---primary:#009688;
---secondary:#004d40;
---accent:#00bfa5;
---white:#fff;
---light-bg:#f4f9f9;
---dark:#333;
---light:#666;
---shadow:0 10px 40px rgba(0,0,0,0.08);
---transition:all .35s ease;
-}
+        :root {
+            --primary: #009688;
+            --secondary: #004d40;
+            --accent: #00bfa5;
+            --white: #fff;
+            --light-bg: #f4f9f9;
+            --dark: #333;
+            --light: #666;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --transition: all .35s ease;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;background:var(--light-bg);color:var(--dark);}
-ul{list-style:none;}
-a{text-decoration:none;color:inherit;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ===== HEADER ===== */
-.header{
-background:var(--white);
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+        }
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 5%;
-}
+        ul {
+            list-style: none;
+        }
 
-.logo{
-font-size:1.6rem;
-font-weight:700;
-color:var(--primary);
-display:flex;
-align-items:center;
-gap:8px;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-.logo i{color:#e63946;}
 
-.nav-menu{display:flex;gap:30px;}
+        /* ===== HEADER (MATCHES INDEX PAGE) ===== */
 
-.nav-link{
-position:relative;
-padding-bottom:5px;
-transition:.3s;
-}
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
 
-.nav-link::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:0%;
-height:2px;
-background:var(--primary);
-transition:.3s;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+        }
 
-.nav-link:hover,
-.nav-link.active{color:var(--primary);}
-.nav-link:hover::after,
-.nav-link.active::after{width:100%;}
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            gap: 10px;
+        }
 
-.hamburger{display:none;cursor:pointer;}
-.bar{width:25px;height:3px;background:#333;margin:5px;}
+        .logo i {
+            color: #e63946;
+            font-size: 1.6rem;
+        }
 
-/* ===== PAGE HEADER ===== */
-.page-header{
-background:linear-gradient(rgba(0,77,64,.9),rgba(0,150,136,.8)),
-url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
-padding:120px 0 60px;
-text-align:center;
-color:white;
-margin-top:70px;
-}
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+        }
 
-.page-header h1{font-size:2.5rem;margin-bottom:10px;}
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #333;
+            transition: .3s;
+            padding-bottom: 5px;
+        }
 
-/* ===== FACILITY SECTION ===== */
-.container{max-width:1100px;margin:auto;padding:0 20px;}
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary);
+            transition: .3s;
+        }
 
-.facility-section{
-position:relative;
-padding:80px 0;
-}
+        .nav-link:hover {
+            color: var(--primary);
+        }
 
-/* subtle medical background pattern */
-.facility-section::before{
-content:"";
-position:absolute;
-inset:0;
-background-image:radial-gradient(circle at 1px 1px, rgba(0,150,136,0.07) 1px, transparent 0);
-background-size:28px 28px;
-z-index:0;
-}
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
-.facility-wrapper{
-position:relative;
-z-index:1;
-}
+        .nav-link.active {
+            color: var(--primary);
+        }
 
-/* vertical accent rail */
-.facility-wrapper::before{
-content:"";
-position:absolute;
-left:30px;
-top:0;
-bottom:0;
-width:4px;
-background:linear-gradient(to bottom,var(--primary),var(--accent));
-border-radius:10px;
-}
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
 
-/* soft section separator */
-.facility-item:not(:last-child)::after{
-content:"";
-position:absolute;
-left:100px;
-right:0;
-bottom:-35px;
-height:1px;
-background:linear-gradient(to right, rgba(0,150,136,0.2), transparent);
-}
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 5px;
+        }
 
-/* facility item */
-.facility-item{
-display:flex;
-gap:40px;
-margin-bottom:80px;
-position:relative;
-padding-left:90px;
-transition:var(--transition);
-}
 
-/* floating icon badge */
-.facility-icon{
-position:absolute;
-left:0;
-top:20px;
-width:60px;
-height:60px;
-background:var(--white);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:var(--shadow);
-border:3px solid var(--primary);
-font-size:22px;
-color:var(--primary);
-transition:var(--transition);
-}
+        /* ===== PAGE HEADER ===== */
 
-/* image small */
-.facility-image{
-flex:0 0 300px;
-border-radius:12px;
-overflow:hidden;
-box-shadow:var(--shadow);
-}
+        .page-header {
+            background: linear-gradient(rgba(0, 77, 64, .9), rgba(0, 150, 136, .8)),
+                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 120px 0 60px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
 
-.facility-image img{
-width:100%;
-height:200px;
-object-fit:cover;
-transition:transform .6s ease;
-}
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
 
-/* content */
-.facility-content{
-flex:1;
-background:var(--white);
-padding:25px 30px;
-border-radius:12px;
-box-shadow:var(--shadow);
-transition:var(--transition);
-}
 
-.facility-content h2{
-margin-bottom:15px;
-color:var(--secondary);
-font-family:'Poppins',sans-serif;
-}
+        /* ===== FACILITY SECTION ===== */
 
-.facility-content ul li{
-padding:6px 0;
-padding-left:22px;
-position:relative;
-color:var(--light);
-}
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-.facility-content ul li::before{
-content:"\f00c";
-font-family:"Font Awesome 6 Free";
-font-weight:900;
-position:absolute;
-left:0;
-color:var(--primary);
-}
+        .facility-section {
+            position: relative;
+            padding: 80px 0;
+        }
 
-/* micro hover interactions */
-.facility-item:hover .facility-content{
-transform:translateY(-6px);
-box-shadow:0 15px 50px rgba(0,0,0,0.12);
-}
+        .facility-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 150, 136, 0.07) 1px, transparent 0);
+            background-size: 28px 28px;
+            z-index: 0;
+        }
 
-.facility-item:hover .facility-image img{
-transform:scale(1.08);
-}
+        .facility-wrapper {
+            position: relative;
+            z-index: 1;
+        }
 
-.facility-item:hover .facility-icon{
-background:var(--primary);
-color:white;
-transform:scale(1.1);
-}
+        .facility-wrapper::before {
+            content: "";
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
+        .facility-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            left: 100px;
+            right: 0;
+            bottom: -35px;
+            height: 1px;
+            background: linear-gradient(to right, rgba(0, 150, 136, 0.2), transparent);
+        }
 
-.nav-menu{
-position:fixed;
-top:70px;
-left:-100%;
-flex-direction:column;
-background:white;
-width:100%;
-height:100vh;
-padding-top:30px;
-transition:.3s;
-}
+        .facility-item {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 80px;
+            position: relative;
+            padding-left: 90px;
+            transition: var(--transition);
+        }
 
-.nav-menu.active{left:0;}
-.hamburger{display:block;}
+        .facility-icon {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            border: 3px solid var(--primary);
+            font-size: 22px;
+            color: var(--primary);
+            transition: var(--transition);
+        }
 
-.facility-wrapper::before{display:none;}
+        .facility-image {
+            flex: 0 0 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
 
-.facility-item{
-flex-direction:column;
-padding-left:0;
-}
+        .facility-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
 
-.facility-icon{
-position:relative;
-margin-bottom:15px;
-}
+        .facility-content {
+            flex: 1;
+            background: var(--white);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
 
-.facility-image{width:100%;}
-.facility-item:not(:last-child)::after{display:none;}
+        .facility-content h2 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-family: 'Poppins', sans-serif;
+        }
 
-}
+        .facility-content ul li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            color: var(--light);
+        }
 
-</style>
+        .facility-content ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .facility-item:hover .facility-content {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .facility-item:hover .facility-image img {
+            transform: scale(1.08);
+        }
+
+        .facility-item:hover .facility-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+
+        /* ===== MOBILE ===== */
+
+        @media(max-width:768px) {
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                height: 100vh;
+                padding-top: 30px;
+                transition: .3s;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .facility-wrapper::before {
+                display: none;
+            }
+
+            .facility-item {
+                flex-direction: column;
+                padding-left: 0;
+            }
+
+            .facility-icon {
+                position: relative;
+                margin-bottom: 15px;
+            }
+
+            .facility-image {
+                width: 100%;
+            }
+
+            .facility-item:not(:last-child)::after {
+                display: none;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="header">
-<nav class="navbar">
-<a href="index.html" class="logo">
-<i class="fas fa-heart-pulse"></i> MediCarePlus
-</a>
+    <header class="header">
+        <nav class="navbar">
 
-<ul class="nav-menu">
-<li><a href="index.html" class="nav-link">Home</a></li>
-<li><a href="speciality.html" class="nav-link">Speciality</a></li>
-<li><a href="facilities.html" class="nav-link active">Facilities</a></li>
-<li><a href="departments.html" class="nav-link">Departments</a></li>
-<li><a href="contact.html" class="nav-link">Contact</a></li>
-</ul>
+            <div class="logo">
+                <i class="fas fa-heart-pulse"></i>
+                MediCarePlus
+            </div>
 
-<div class="hamburger">
-<div class="bar"></div>
-<div class="bar"></div>
-<div class="bar"></div>
-</div>
-</nav>
-</header>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="speciality.html" class="nav-link">Speciality</a></li>
+                <li><a href="facilities.html" class="nav-link active">Facilities</a></li>
+                <li><a href="departments.html" class="nav-link">Departments</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
 
-<section class="page-header">
-<h1>Our Facilities</h1>
-<p>Advanced Infrastructure & Patient Comfort</p>
-</section>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
 
-<section class="facility-section">
-<div class="container">
-<div class="facility-wrapper">
+        </nav>
+    </header>
 
-<!-- OPD -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-user-md"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1580281657527-47b94e0f3f76?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>OPD</h2>
-<ul>
-<li>Specialist Consultation</li>
-<li>Online Booking</li>
-<li>Wheelchair Support</li>
-</ul>
-</div>
-</div>
+    <section class="page-header">
+        <h1>Our Facilities</h1>
+        <p>Advanced Infrastructure & Patient Comfort</p>
+    </section>
 
-<!-- Ultrasound -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-wave-square"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1581090700227-4c4f50c6f8ef?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>Ultrasound</h2>
-<ul>
-<li>4D Scanning</li>
-<li>Advanced Imaging</li>
-<li>Fast Reports</li>
-</ul>
-</div>
-</div>
+    <!-- EVERYTHING BELOW IS EXACTLY SAME AS YOUR ORIGINAL -->
 
-<!-- 24 Hours Lab -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-flask"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>24 Hours Laboratory</h2>
-<ul>
-<li>Emergency Testing</li>
-<li>Accurate Reports</li>
-<li>Modern Equipment</li>
-</ul>
-</div>
-</div>
+    <section class="facility-section">
+        <div class="container">
+            <div class="facility-wrapper">
 
-<!-- AC Rooms -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-bed"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>AC & Deluxe Rooms</h2>
-<ul>
-<li>AC Available</li>
-<li>Private Rooms</li>
-<li>24/7 Nursing Care</li>
-</ul>
-</div>
-</div>
+                <!-- OPD -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-user-md"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1580281657527-47b94e0f3f76?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>OPD</h2>
+                        <ul>
+                            <li>Specialist Consultation</li>
+                            <li>Online Booking</li>
+                            <li>Wheelchair Support</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- Laparoscopic -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-syringe"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>Laparoscopic Surgery</h2>
-<ul>
-<li>General Surgery</li>
-<li>Minimal Invasive</li>
-<li>Quick Recovery</li>
-</ul>
-</div>
-</div>
+                <!-- Ultrasound -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-wave-square"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1581090700227-4c4f50c6f8ef?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>Ultrasound</h2>
+                        <ul>
+                            <li>4D Scanning</li>
+                            <li>Advanced Imaging</li>
+                            <li>Fast Reports</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- Women Cancer -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-ribbon"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>Women Cancer Screening</h2>
-<ul>
-<li>Early Detection</li>
-<li>Mammography</li>
-<li>Cervical Screening</li>
-</ul>
-</div>
-</div>
+                <!-- 24 Hours Lab -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-flask"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>24 Hours Laboratory</h2>
+                        <ul>
+                            <li>Emergency Testing</li>
+                            <li>Accurate Reports</li>
+                            <li>Modern Equipment</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- IUI Lab -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-vial"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>IUI Lab</h2>
-<ul>
-<li>Fertility Support</li>
-<li>Advanced Technology</li>
-<li>Experienced Specialists</li>
-</ul>
-</div>
-</div>
+                <!-- AC Rooms -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-bed"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>AC & Deluxe Rooms</h2>
+                        <ul>
+                            <li>AC Available</li>
+                            <li>Private Rooms</li>
+                            <li>24/7 Nursing Care</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- Medical Shop -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-pills"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>Medical Shop</h2>
-<ul>
-<li>24/7 Pharmacy</li>
-<li>All Medicines Available</li>
-<li>Insurance Support</li>
-</ul>
-</div>
-</div>
+                <!-- Laparoscopic -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-syringe"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>Laparoscopic Surgery</h2>
+                        <ul>
+                            <li>General Surgery</li>
+                            <li>Minimal Invasive</li>
+                            <li>Quick Recovery</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- Lift -->
-<div class="facility-item">
-<div class="facility-icon"><i class="fas fa-elevator"></i></div>
-<div class="facility-image">
-<img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80">
-</div>
-<div class="facility-content">
-<h2>Lift Facility</h2>
-<ul>
-<li>Wheelchair Friendly</li>
-<li>Patient Transport</li>
-<li>Safe & Spacious</li>
-</ul>
-</div>
-</div>
+                <!-- Women Cancer -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-ribbon"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>Women Cancer Screening</h2>
+                        <ul>
+                            <li>Early Detection</li>
+                            <li>Mammography</li>
+                            <li>Cervical Screening</li>
+                        </ul>
+                    </div>
+                </div>
 
-</div>
-</div>
-</section>
+                <!-- IUI Lab -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-vial"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>IUI Lab</h2>
+                        <ul>
+                            <li>Fertility Support</li>
+                            <li>Advanced Technology</li>
+                            <li>Experienced Specialists</li>
+                        </ul>
+                    </div>
+                </div>
 
-<script>
-const hamburger=document.querySelector(".hamburger");
-const navMenu=document.querySelector(".nav-menu");
-hamburger.addEventListener("click",()=>{
-navMenu.classList.toggle("active");
-});
-</script>
+                <!-- Medical Shop -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-pills"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>Medical Shop</h2>
+                        <ul>
+                            <li>24/7 Pharmacy</li>
+                            <li>All Medicines Available</li>
+                            <li>Insurance Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lift -->
+                <div class="facility-item">
+                    <div class="facility-icon"><i class="fas fa-elevator"></i></div>
+                    <div class="facility-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80">
+                    </div>
+                    <div class="facility-content">
+                        <h2>Lift Facility</h2>
+                        <ul>
+                            <li>Wheelchair Friendly</li>
+                            <li>Patient Transport</li>
+                            <li>Safe & Spacious</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
 
 </body>
+
 </html>
+```

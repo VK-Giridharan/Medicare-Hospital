@@ -1,30 +1,372 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>About | Medicare Hospital</title>
-<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | MediCare Plus</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #009688;
+            --secondary: #004d40;
+            --white: #fff;
+            --dark: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f4f9f9;
+        }
+
+        /* HEADER */
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            gap: 10px;
+        }
+
+        .logo i {
+            color: #e63946;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #333;
+            text-decoration: none;
+            padding-bottom: 5px;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary);
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 5px;
+        }
+
+        /* PAGE SPACE BELOW HEADER */
+
+        .page-content {
+            margin-top: 120px;
+            padding: 40px 8%;
+        }
+
+        /* SECTION */
+
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .department-box {
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            background: #fff;
+            margin-bottom: 15px;
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .doctor-info {
+            padding: 15px;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px) {
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                height: 100vh;
+                padding-top: 30px;
+                transition: .3s;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-<nav class="navbar">
-<div class="container nav-container">
-<div class="logo">Medicare</div>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="speciality.html">Speciality</a></li>
-<li><a class="active" href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-</nav>
-</header>
+    <!-- HEADER -->
 
-<section class="section">
-<h2>About Our Hospital</h2>
-<p>Medicare Hospital is dedicated to advanced women healthcare with modern facilities and patient-focused treatment.</p>
-</section>
+    <header class="header">
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <i class="fas fa-heart-pulse"></i>
+                MediCarePlus
+            </div>
+
+            <ul class="nav-menu">
+
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="speciality.html" class="nav-link">Speciality</a></li>
+                <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+                <li><a href="departments.html" class="nav-link">Departments</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+            </ul>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- PAGE CONTENT -->
+
+    <div class="page-content">
+
+        <section>
+            <h2 class="section-title">Hospital History</h2>
+
+            <p>
+                ME Hospital was established in 2010 with a vision to provide high-quality and affordable healthcare
+                services.
+                Over the years, it has grown into a multi-speciality hospital serving thousands of patients with
+                advanced technology and experienced doctors.
+            </p>
+        </section>
+
+        <br>
+
+        <section>
+
+            <h2 class="section-title">Mission & Vision</h2>
+
+            <h4>Our Mission</h4>
+
+            <p>
+                To deliver compassionate, patient-centered healthcare with excellence in clinical practice and
+                innovation.
+            </p>
+
+            <h4>Our Vision</h4>
+
+            <p>
+                To become a leading healthcare institution known for quality treatment and community care.
+            </p>
+
+        </section>
+
+        <br>
+
+        <section>
+
+            <h2 class="section-title">Infrastructure</h2>
+
+            <ul>
+                <li>150+ Bed Capacity</li>
+                <li>24/7 Emergency Care</li>
+                <li>Modern Operation Theatres</li>
+                <li>Advanced Diagnostic Laboratory</li>
+                <li>ICU & NICU Facilities</li>
+                <li>Digital Radiology & MRI Scan</li>
+            </ul>
+
+        </section>
+
+        <br>
+
+        <section>
+
+            <h2 class="section-title">Certifications</h2>
+
+            <ul>
+                <li>NABH Accredited Hospital</li>
+                <li>ISO 9001:2015 Certified</li>
+                <li>Certified Blood Bank Facility</li>
+            </ul>
+
+        </section>
+
+        <br>
+
+        <section>
+
+            <h2 class="section-title">Departments</h2>
+
+            <div class="department-box">
+                <h4>Cardiology</h4>
+                <p>Heart care including diagnostics, angioplasty and surgery.</p>
+            </div>
+
+            <div class="department-box">
+                <h4>Orthopedics</h4>
+                <p>Bone and joint treatments and joint replacement surgery.</p>
+            </div>
+
+            <div class="department-box">
+                <h4>Neurology</h4>
+                <p>Treatment for stroke, epilepsy and neurological disorders.</p>
+            </div>
+
+            <div class="department-box">
+                <h4>Pediatrics</h4>
+                <p>Complete child healthcare services.</p>
+            </div>
+
+        </section>
+
+        <br>
+
+        <section>
+
+            <h2 class="section-title">Our Doctors</h2>
+
+            <div class="doctor-grid">
+
+                <div class="doctor-card">
+                    <img src="images/doctor1.jpg">
+                    <div class="doctor-info">
+                        <h4>Dr. Ramesh Kumar</h4>
+                        <p>MBBS, MD Cardiology</p>
+                        <p>15 Years Experience</p>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="images/doctor2.jpg">
+                    <div class="doctor-info">
+                        <h4>Dr. Priya Sharma</h4>
+                        <p>MBBS, MS Orthopedics</p>
+                        <p>12 Years Experience</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 MediCarePlus. All Rights Reserved.
+    </footer>
+
+    <script>
+
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+    </script>
 
 </body>
+
 </html>
