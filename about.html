@@ -8,7 +8,7 @@
     <title>About Us | MediCare Plus</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,7 +28,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background: #f4f9f9;
         }
 
@@ -53,7 +53,7 @@
         .logo {
             display: flex;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.7rem;
             font-weight: 700;
             color: var(--primary);
@@ -77,6 +77,7 @@
             color: #333;
             text-decoration: none;
             padding-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .nav-link::after {
@@ -123,6 +124,7 @@
             font-weight: 600;
             margin-bottom: 20px;
             color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .department-box {
@@ -193,8 +195,6 @@
 
 <body>
 
-    <!-- HEADER -->
-
     <header class="header">
 
         <nav class="navbar">
@@ -225,38 +225,16 @@
 
     </header>
 
-    <!-- PAGE CONTENT -->
-
     <div class="page-content">
 
         <section>
             <h2 class="section-title">Hospital History</h2>
 
             <p>
-                ME Hospital was established in 2010 with a vision to provide high-quality and affordable healthcare
-                services.
+                MediCarePlus Hospital was established in 2010 with a vision to provide high-quality and affordable
+                healthcare services.
                 Over the years, it has grown into a multi-speciality hospital serving thousands of patients with
                 advanced technology and experienced doctors.
-            </p>
-        </section>
-
-        <br>
-
-        <section>
-
-            <h2 class="section-title">Mission & Vision</h2>
-
-            <h4>Our Mission</h4>
-
-            <p>
-                To deliver compassionate, patient-centered healthcare with excellence in clinical practice and
-                innovation.
-            </p>
-
-            <h4>Our Vision</h4>
-
-            <p>
-                To become a leading healthcare institution known for quality treatment and community care.
             </p>
 
         </section>
@@ -329,7 +307,7 @@
             <div class="doctor-grid">
 
                 <div class="doctor-card">
-                    <img src="images/doctor1.jpg">
+                    <img src="images/doctor1.jpg" alt="Dr Ramesh Kumar">
                     <div class="doctor-info">
                         <h4>Dr. Ramesh Kumar</h4>
                         <p>MBBS, MD Cardiology</p>
@@ -338,7 +316,7 @@
                 </div>
 
                 <div class="doctor-card">
-                    <img src="images/doctor2.jpg">
+                    <img src="images/doctor2.jpg" alt="Dr Priya Sharma">
                     <div class="doctor-info">
                         <h4>Dr. Priya Sharma</h4>
                         <p>MBBS, MS Orthopedics</p>
@@ -360,9 +338,16 @@
 
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
 
         hamburger.addEventListener("click", () => {
             navMenu.classList.toggle("active");
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+            });
         });
 
     </script>
