@@ -2,356 +2,387 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | MediCare Plus</title>
 
-    <title>About Us | MediCare Plus</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+<style>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+:root{
+--primary:#009688;
+--secondary:#004d40;
+--light:#f4f9f9;
+--dark:#333;
+--shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-    <style>
-        :root {
-            --primary: #009688;
-            --secondary: #004d40;
-            --white: #fff;
-            --dark: #222;
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+font-family:'Roboto',sans-serif;
+background:var(--light);
+color:var(--dark);
+}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: #f4f9f9;
-        }
+/* HEADER */
 
-        /* HEADER */
+.header{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
 
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: white;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 6%;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 6%;
-        }
+.logo{
+display:flex;
+align-items:center;
+font-family:'Poppins',sans-serif;
+font-size:1.7rem;
+font-weight:700;
+color:var(--primary);
+gap:10px;
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--primary);
-            gap: 10px;
-        }
+.logo i{color:#e63946;}
 
-        .logo i {
-            color: #e63946;
-        }
+.nav-menu{
+display:flex;
+gap:35px;
+list-style:none;
+}
 
-        .nav-menu {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-        }
+.nav-link{
+position:relative;
+font-weight:500;
+font-size:1rem;
+color:#333;
+text-decoration:none;
+padding-bottom:5px;
+transition:.3s;
+}
 
-        .nav-link {
-            position: relative;
-            font-weight: 500;
-            font-size: 1rem;
-            color: #333;
-            text-decoration: none;
-            padding-bottom: 5px;
-            font-family: 'Montserrat', sans-serif;
-        }
+.nav-link::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:2px;
+background:var(--primary);
+transition:.3s;
+}
 
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            height: 2px;
-            background: var(--primary);
-            transition: .3s;
-        }
+.nav-link:hover{color:var(--primary);}
+.nav-link:hover::after{width:100%;}
 
-        .nav-link:hover {
-            color: var(--primary);
-        }
+.nav-link.active{color:var(--primary);}
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+.hamburger{display:none;cursor:pointer;}
+.bar{width:25px;height:3px;background:#333;margin:5px;}
 
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
+/* HERO */
 
-        .bar {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 5px;
-        }
+.hero{
+margin-top:80px;
+padding:80px 6%;
+text-align:center;
+background:linear-gradient(rgba(0,150,136,.9),rgba(0,77,64,.9));
+color:white;
+}
 
-        /* PAGE SPACE BELOW HEADER */
+.hero h1{font-size:2.5rem;margin-bottom:10px;}
 
-        .page-content {
-            margin-top: 120px;
-            padding: 40px 8%;
-        }
+/* GRID */
 
-        /* SECTION */
+.section{padding:60px 6%;}
 
-        .section-title {
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--primary);
-            font-family: 'Montserrat', sans-serif;
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
 
-        .department-box {
-            border-left: 5px solid var(--primary);
-            padding: 15px;
-            background: #fff;
-            margin-bottom: 15px;
-        }
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:var(--shadow);
+transition:.4s;
+}
 
-        .doctor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.card:hover{transform:translateY(-8px);}
 
-        .doctor-card {
-            background: white;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+.card i{
+font-size:1.8rem;
+color:var(--primary);
+margin-bottom:15px;
+}
 
-        .doctor-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+/* DOCTORS */
 
-        .doctor-info {
-            padding: 15px;
-        }
+.doctor-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:var(--shadow);
+cursor:pointer;
+transition:.4s;
+}
 
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
+.doctor-card:hover{transform:translateY(-8px);}
 
-        /* MOBILE */
+.doctor-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
 
-        @media(max-width:768px) {
+.doctor-info{padding:20px;}
 
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background: white;
-                width: 100%;
-                height: 100vh;
-                padding-top: 30px;
-                transition: .3s;
-            }
+/* MODAL */
 
-            .nav-menu.active {
-                left: 0;
-            }
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.7);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
 
-            .hamburger {
-                display: block;
-            }
+.modal-content{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:500px;
+width:90%;
+position:relative;
+animation:fadeIn .4s ease;
+}
 
-        }
-    </style>
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;}
+}
+
+.close{
+position:absolute;
+top:10px;
+right:15px;
+font-size:1.5rem;
+cursor:pointer;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+background:white;
+padding:60px 6%;
+}
+
+.testimonial-card{
+background:var(--light);
+padding:25px;
+border-radius:12px;
+box-shadow:var(--shadow);
+transition:.4s;
+}
+
+.testimonial-card:hover{
+transform:translateY(-6px);
+}
+
+.testimonial-card i{
+color:gold;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--secondary);
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-menu{
+position:fixed;
+top:80px;
+left:-100%;
+flex-direction:column;
+background:white;
+width:100%;
+height:100vh;
+padding-top:30px;
+transition:.3s;
+}
+
+.nav-menu.active{left:0;}
+.hamburger{display:block;}
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <header class="header">
+<header class="header">
+<nav class="navbar">
 
-        <nav class="navbar">
+<div class="logo">
+<i class="fas fa-heart-pulse"></i>
+MediCarePlus
+</div>
 
-            <div class="logo">
-                <i class="fas fa-heart-pulse"></i>
-                MediCarePlus
-            </div>
+<ul class="nav-menu">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="speciality.html" class="nav-link">Speciality</a></li>
+<li><a href="facilities.html" class="nav-link">Facilities</a></li>
+<li><a href="departments.html" class="nav-link">Departments</a></li>
+<li><a href="about.html" class="nav-link active">About Us</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
 
-            <ul class="nav-menu">
+<div class="hamburger">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
 
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="speciality.html" class="nav-link">Speciality</a></li>
-                <li><a href="facilities.html" class="nav-link">Facilities</a></li>
-                <li><a href="departments.html" class="nav-link">Departments</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+</nav>
+</header>
 
-            </ul>
+<section class="hero">
+<h1>About MediCarePlus</h1>
+<p>Trusted healthcare with compassion</p>
+</section>
 
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+<section class="section">
+<div class="grid">
+<div class="card">
+<i class="fas fa-hospital"></i>
+<h3>Hospital History</h3>
+<p>Established in 2010 delivering quality healthcare.</p>
+</div>
 
-        </nav>
+<div class="card">
+<i class="fas fa-building"></i>
+<h3>Infrastructure</h3>
+<p>150+ beds, ICU, modern labs.</p>
+</div>
 
-    </header>
+<div class="card">
+<i class="fas fa-award"></i>
+<h3>Certifications</h3>
+<p>NABH & ISO Certified hospital.</p>
+</div>
+</div>
+</section>
 
-    <div class="page-content">
+<!-- DOCTORS -->
+<section class="section">
+<h2>Our Doctors</h2>
 
-        <section>
-            <h2 class="section-title">Hospital History</h2>
+<div class="grid">
 
-            <p>
-                MediCarePlus Hospital was established in 2010 with a vision to provide high-quality and affordable
-                healthcare services.
-                Over the years, it has grown into a multi-speciality hospital serving thousands of patients with
-                advanced technology and experienced doctors.
-            </p>
+<div class="doctor-card" onclick="openModal('Dr. Ramesh Kumar','Cardiologist with 15+ years experience')">
+<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80">
+<div class="doctor-info">
+<h4>Dr. Ramesh Kumar</h4>
+<p>Cardiologist</p>
+</div>
+</div>
 
-        </section>
+<div class="doctor-card" onclick="openModal('Dr. Priya Sharma','Orthopedic specialist with 12+ years experience')">
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80">
+<div class="doctor-info">
+<h4>Dr. Priya Sharma</h4>
+<p>Orthopedic</p>
+</div>
+</div>
 
-        <br>
+</div>
+</section>
 
-        <section>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<h2 style="margin-bottom:30px;">Patient Testimonials</h2>
 
-            <h2 class="section-title">Infrastructure</h2>
+<div class="grid">
 
-            <ul>
-                <li>150+ Bed Capacity</li>
-                <li>24/7 Emergency Care</li>
-                <li>Modern Operation Theatres</li>
-                <li>Advanced Diagnostic Laboratory</li>
-                <li>ICU & NICU Facilities</li>
-                <li>Digital Radiology & MRI Scan</li>
-            </ul>
+<div class="testimonial-card">
+<i class="fas fa-star"></i>
+<p>"Excellent care and friendly doctors. Highly recommended!"</p>
+<h4>- Ravi Kumar</h4>
+</div>
 
-        </section>
+<div class="testimonial-card">
+<i class="fas fa-star"></i>
+<p>"Clean hospital and quick emergency response."</p>
+<h4>- Priya S</h4>
+</div>
 
-        <br>
+<div class="testimonial-card">
+<i class="fas fa-star"></i>
+<p>"Best maternity care experience."</p>
+<h4>- Aisha Khan</h4>
+</div>
 
-        <section>
+</div>
+</section>
 
-            <h2 class="section-title">Certifications</h2>
+<!-- MODAL -->
+<div class="modal" id="doctorModal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<h3 id="docName"></h3>
+<p id="docDetails"></p>
+</div>
+</div>
 
-            <ul>
-                <li>NABH Accredited Hospital</li>
-                <li>ISO 9001:2015 Certified</li>
-                <li>Certified Blood Bank Facility</li>
-            </ul>
+<footer>
+© 2026 MediCarePlus. All Rights Reserved.
+</footer>
 
-        </section>
+<script>
 
-        <br>
+const hamburger=document.querySelector(".hamburger");
+const navMenu=document.querySelector(".nav-menu");
 
-        <section>
+hamburger.addEventListener("click",()=>{
+navMenu.classList.toggle("active");
+});
 
-            <h2 class="section-title">Departments</h2>
+function openModal(name,details){
+document.getElementById("doctorModal").style.display="flex";
+document.getElementById("docName").innerText=name;
+document.getElementById("docDetails").innerText=details;
+}
 
-            <div class="department-box">
-                <h4>Cardiology</h4>
-                <p>Heart care including diagnostics, angioplasty and surgery.</p>
-            </div>
+function closeModal(){
+document.getElementById("doctorModal").style.display="none";
+}
 
-            <div class="department-box">
-                <h4>Orthopedics</h4>
-                <p>Bone and joint treatments and joint replacement surgery.</p>
-            </div>
-
-            <div class="department-box">
-                <h4>Neurology</h4>
-                <p>Treatment for stroke, epilepsy and neurological disorders.</p>
-            </div>
-
-            <div class="department-box">
-                <h4>Pediatrics</h4>
-                <p>Complete child healthcare services.</p>
-            </div>
-
-        </section>
-
-        <br>
-
-        <section>
-
-            <h2 class="section-title">Our Doctors</h2>
-
-            <div class="doctor-grid">
-
-                <div class="doctor-card">
-                    <img src="images/doctor1.jpg" alt="Dr Ramesh Kumar">
-                    <div class="doctor-info">
-                        <h4>Dr. Ramesh Kumar</h4>
-                        <p>MBBS, MD Cardiology</p>
-                        <p>15 Years Experience</p>
-                    </div>
-                </div>
-
-                <div class="doctor-card">
-                    <img src="images/doctor2.jpg" alt="Dr Priya Sharma">
-                    <div class="doctor-info">
-                        <h4>Dr. Priya Sharma</h4>
-                        <p>MBBS, MS Orthopedics</p>
-                        <p>12 Years Experience</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-
-    <footer>
-        © 2026 MediCarePlus. All Rights Reserved.
-    </footer>
-
-    <script>
-
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-            });
-        });
-
-    </script>
+</script>
 
 </body>
-
 </html>

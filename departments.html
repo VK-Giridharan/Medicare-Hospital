@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Departments | MediCare Plus</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ===== ROOT ===== */
 
         :root {
             --primary: #009688;
@@ -23,11 +20,7 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -35,7 +28,7 @@
             color: var(--text);
         }
 
-        /* ===== HEADER (same as index) ===== */
+        /* ===== HEADER FIXED ===== */
 
         .header {
             position: fixed;
@@ -103,12 +96,9 @@
             width: 100%;
         }
 
+        /* ✅ FIX: NO underline for active */
         .nav-link.active {
             color: var(--primary);
-        }
-
-        .nav-link.active::after {
-            width: 100%;
         }
 
         .hamburger {
@@ -133,13 +123,6 @@
             color: white;
             margin-top: 80px;
         }
-
-        .page-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-
-        /* ===== DEPARTMENTS ===== */
 
         .departments {
             padding: 80px 6%;
@@ -207,17 +190,13 @@
             font-size: .9rem;
             color: var(--muted);
             margin-top: 10px;
-            line-height: 1.6;
         }
 
         .department-card.active .expand-content {
             max-height: 220px;
         }
 
-        /* ===== MOBILE ===== */
-
         @media(max-width:768px) {
-
             .nav-menu {
                 position: fixed;
                 top: 80px;
@@ -230,135 +209,229 @@
                 transition: .3s;
             }
 
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
+            .nav-menu.active { left: 0; }
+            .hamburger { display: block; }
         }
+
     </style>
 </head>
 
 <body>
 
-    <header class="header">
-        <nav class="navbar">
+<header class="header">
+<nav class="navbar">
 
-            <div class="logo">
-                <i class="fas fa-heart-pulse"></i>
-                MediCarePlus
-            </div>
+<div class="logo">
+<i class="fas fa-heart-pulse"></i>
+MediCarePlus
+</div>
 
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="speciality.html" class="nav-link">Speciality</a></li>
-                <li><a href="facilities.html" class="nav-link">Facilities</a></li>
-                <li><a href="departments.html" class="nav-link active">Departments</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="Contact.html" class="nav-link">Contact</a></li>
-            </ul>
+<ul class="nav-menu">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="speciality.html" class="nav-link">Speciality</a></li>
+<li><a href="facilities.html" class="nav-link">Facilities</a></li>
+<li><a href="departments.html" class="nav-link active">Departments</a></li>
+<li><a href="about.html" class="nav-link">About Us</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
 
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+<div class="hamburger">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
 
-        </nav>
-    </header>
+</nav>
+</header>
 
-    <section class="page-header">
-        <h1>Our Departments</h1>
-        <p>Dedicated Specialized Medical Units</p>
-    </section>
+<section class="page-header">
+<h1>Our Departments</h1>
+<p>Dedicated Specialized Medical Units</p>
+</section>
 
-    <section class="departments">
+<section class="departments">
 
-        <div class="department-card">
-            <div class="department-image">
-                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80">
-            </div>
-            <div class="department-content">
-                <h2><i class="fas fa-baby"></i> Obstetrics</h2>
-                <ul>
-                    <li>Normal & Cesarean Delivery</li>
-                    <li>High-Risk Pregnancy</li>
-                    <li>Ante & Post Natal Care</li>
-                    <li>Ultrasound Monitoring</li>
-                </ul>
-                <span class="read-more">Click for Details</span>
-                <div class="expand-content">
-                    Advanced maternity department providing safe pregnancy monitoring and delivery services.
-                </div>
-            </div>
-        </div>
+<!-- ALL NEW DEPARTMENTS ADDED -->
 
-        <div class="department-card">
-            <div class="department-image">
-                <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80">
-            </div>
-            <div class="department-content">
-                <h2><i class="fas fa-female"></i> Gynaecology</h2>
-                <ul>
-                    <li>PCOD/PCOS Management</li>
-                    <li>Fibroid Treatment</li>
-                    <li>Laparoscopic Hysterectomy</li>
-                    <li>Menopause Care</li>
-                </ul>
-                <span class="read-more">Click for Details</span>
-                <div class="expand-content">
-                    Comprehensive women’s healthcare including hormonal disorders and minimally invasive surgery.
-                </div>
-            </div>
-        </div>
+<!-- Obstetrics -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-baby"></i> Obstetrics</h2>
+<ul>
+<li>Normal Delivery</li>
+<li>Cesarean Delivery</li>
+<li>High Risk Pregnancy</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Safe maternity care with modern monitoring.</div>
+</div>
+</div>
 
-        <div class="department-card">
-            <div class="department-image">
-                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80">
-            </div>
-            <div class="department-content">
-                <h2><i class="fas fa-wave-square"></i> Ultrasound (Scan)</h2>
-                <ul>
-                    <li>Pregnancy Scans</li>
-                    <li>Abdominal Scans</li>
-                    <li>Pelvic Scan</li>
-                    <li>Diagnostic Imaging</li>
-                </ul>
-                <span class="read-more">Click for Details</span>
-                <div class="expand-content">
-                    High-precision ultrasound imaging services for accurate diagnosis and pregnancy monitoring.
-                </div>
-            </div>
-        </div>
+<!-- Gynaecology -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-female"></i> Gynaecology</h2>
+<ul>
+<li>PCOD / PCOS</li>
+<li>Fibroid Treatment</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Complete women health and surgery support.</div>
+</div>
+</div>
 
-    </section>
+<!-- Ultrasound -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-wave-square"></i> Ultrasound</h2>
+<ul>
+<li>Pregnancy Scan</li>
+<li>Diagnostic Imaging</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Advanced imaging for diagnosis.</div>
+</div>
+</div>
 
-    <script>
+<!-- Women Cancer -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1580281657527-47a6e0f9c54d?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-ribbon"></i> Women Cancer Prevention</h2>
+<ul>
+<li>Screening</li>
+<li>Early Detection</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Early cancer detection & awareness.</div>
+</div>
+</div>
 
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
+<!-- General Surgery -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1580281657527-47a6e0f9c54d?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-user-md"></i> General Surgery</h2>
+<ul>
+<li>Basic Surgery</li>
+<li>Emergency Surgery</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Comprehensive surgical care.</div>
+</div>
+</div>
 
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
+<!-- Laparoscopic -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-stethoscope"></i> Laparoscopic Surgery</h2>
+<ul>
+<li>Minimally Invasive</li>
+<li>Fast Recovery</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Modern minimal surgery techniques.</div>
+</div>
+</div>
 
-        document.querySelectorAll(".nav-link").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-            });
-        });
+<!-- Infertility -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-flask"></i> Infertility / IUI Lab</h2>
+<ul>
+<li>IUI Treatment</li>
+<li>Fertility Support</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Helping couples achieve parenthood.</div>
+</div>
+</div>
 
-        document.querySelectorAll(".department-card").forEach(card => {
-            card.addEventListener("click", () => {
-                card.classList.toggle("active");
-            });
-        });
+<!-- PCOD -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1580281657527-47a6e0f9c54d?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-heartbeat"></i> PCOD Clinic</h2>
+<ul>
+<li>Hormonal Treatment</li>
+<li>Diet & Care</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Special care for PCOD conditions.</div>
+</div>
+</div>
 
-    </script>
+<!-- Weight -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-weight"></i> Weight Reduction</h2>
+<ul>
+<li>Diet Plans</li>
+<li>Fitness Guidance</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Healthy weight management.</div>
+</div>
+</div>
+
+<!-- Sex Education -->
+<div class="department-card">
+<div class="department-image">
+<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=800&q=80">
+</div>
+<div class="department-content">
+<h2><i class="fas fa-book"></i> Sex Education</h2>
+<ul>
+<li>Couples Guidance</li>
+<li>Adolescent Awareness</li>
+</ul>
+<span class="read-more">Click for Details</span>
+<div class="expand-content">Education for healthy relationships.</div>
+</div>
+</div>
+
+</section>
+
+<script>
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".department-card").forEach(card => {
+card.addEventListener("click", () => {
+card.classList.toggle("active");
+});
+});
+
+</script>
 
 </body>
-
 </html>
