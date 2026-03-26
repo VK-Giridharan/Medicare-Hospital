@@ -52,6 +52,7 @@ align-items: center;
 padding: 18px 6%;
 }
 
+/* ✅ LOGO CLICKABLE */
 .logo {
 display: flex;
 align-items: center;
@@ -60,6 +61,7 @@ font-size: 1.7rem;
 font-weight: 700;
 color: var(--primary);
 gap: 10px;
+text-decoration: none;
 }
 
 .logo i {
@@ -83,6 +85,11 @@ padding-bottom: 5px;
 text-decoration: none;
 }
 
+/* ❌ HIDE ICONS IN DESKTOP */
+.nav-link i{
+display: none;
+}
+
 .nav-link::after {
 content: "";
 position: absolute;
@@ -102,7 +109,7 @@ color: var(--primary);
 width: 100%;
 }
 
-/* ACTIVE HOME */
+/* ACTIVE */
 .nav-link.active {
 color: var(--primary);
 }
@@ -154,7 +161,7 @@ background: linear-gradient(transparent, rgba(0,0,0,.8));
 color: white;
 }
 
-/* ================= HOME CONTENT ================= */
+/* ================= CONTENT ================= */
 
 .section {
 padding: 60px 6%;
@@ -225,8 +232,9 @@ box-shadow: 0 0 20px rgba(0,0,0,0.1);
 left: 0;
 }
 
-/* ICONS FOR MOBILE ONLY */
-.nav-link i {
+/* ✅ SHOW ICONS ONLY IN MOBILE */
+.nav-link i{
+display: inline-block;
 margin-right: 10px;
 color: var(--primary);
 }
@@ -235,7 +243,7 @@ color: var(--primary);
 display: block;
 }
 
-/* SMALLER SLIDER */
+/* SMALL SLIDER */
 .slider {
 height: 250px;
 }
@@ -255,10 +263,11 @@ padding: 20px 0;
 <header class="header">
 <nav class="navbar">
 
-<div class="logo">
+<!-- ✅ CLICKABLE LOGO -->
+<a href="index.html" class="logo">
 <i class="fas fa-heart-pulse"></i>
 MediCarePlus
-</div>
+</a>
 
 <ul class="nav-menu">
 

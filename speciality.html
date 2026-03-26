@@ -58,6 +58,7 @@ align-items: center;
 padding: 18px 6%;
 }
 
+/* ✅ CLICKABLE LOGO */
 .logo {
 display: flex;
 align-items: center;
@@ -66,6 +67,7 @@ font-size: 1.7rem;
 font-weight: 700;
 color: var(--primary);
 gap: 10px;
+text-decoration: none;
 }
 
 .logo i {
@@ -85,6 +87,11 @@ font-size: 1rem;
 color: #333;
 transition: .3s;
 padding-bottom: 5px;
+}
+
+/* ❌ HIDE ICONS IN DESKTOP */
+.nav-link i {
+display: none;
 }
 
 .nav-link::after {
@@ -110,7 +117,7 @@ width: 100%;
 color: var(--primary);
 }
 
-/* ===== MOBILE MENU IMPROVED ===== */
+/* ===== MOBILE MENU ===== */
 
 .hamburger {
 display: none;
@@ -257,7 +264,9 @@ box-shadow: 0 0 20px rgba(0,0,0,0.1);
 left: 0;
 }
 
+/* ✅ SHOW ICONS ONLY IN MOBILE */
 .nav-link i {
+display: inline-block;
 margin-right: 10px;
 color: var(--primary);
 }
@@ -285,10 +294,11 @@ margin: -30px 10px 0 10px;
 <header class="header">
 <nav class="navbar">
 
-<div class="logo">
+<!-- ✅ CLICKABLE LOGO -->
+<a href="index.html" class="logo">
 <i class="fas fa-heart-pulse"></i>
 MediCarePlus
-</div>
+</a>
 
 <ul class="nav-menu">
 
@@ -329,7 +339,8 @@ MediCarePlus
 <section class="zigzag-section">
 <div class="container">
 
-<!-- CARDIOLOGY -->
+<!-- SAME CONTENT (UNCHANGED) -->
+
 <div class="zigzag-item">
 <div class="zigzag-image">
 <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc">
@@ -346,7 +357,6 @@ MediCarePlus
 </div>
 </div>
 
-<!-- ORTHO -->
 <div class="zigzag-item reverse">
 <div class="zigzag-image">
 <img src="https://images.unsplash.com/photo-1581595220892-b0739db338c5">
@@ -363,7 +373,6 @@ MediCarePlus
 </div>
 </div>
 
-<!-- NEURO -->
 <div class="zigzag-item">
 <div class="zigzag-image">
 <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b">
@@ -380,7 +389,6 @@ MediCarePlus
 </div>
 </div>
 
-<!-- PEDIATRICS -->
 <div class="zigzag-item reverse">
 <div class="zigzag-image">
 <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
