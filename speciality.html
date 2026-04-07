@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Specialities | MediCare Plus</title>
+<title>Specialities | NSK Hospital</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,6 +68,13 @@ font-weight: 700;
 color: var(--primary);
 gap: 10px;
 text-decoration: none;
+}
+
+.logo-img {
+width: 55px;
+height: 55px;
+object-fit: cover;
+border-radius: 8px;
 }
 
 .logo i {
@@ -135,7 +142,7 @@ margin: 5px;
 
 .page-header {
 background: linear-gradient(rgba(0, 77, 64, .9), rgba(0, 150, 136, .8)),
-url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
+url('assets/images/background.jpg') center/cover;
 padding: 130px 0 60px;
 text-align: center;
 color: white;
@@ -257,19 +264,20 @@ margin-top: 60px;
   justify-content: space-between;
 }
 
-.nav-menu {
+         .nav-menu {
 position: fixed;
 top: 80px;
 left: -100%;
 flex-direction: column;
 background: white;
-width: 90%;
+width: 60%;
 height: 100vh;
 padding: 30px;
 gap: 20px;
 transition: .3s;
 box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+
 
 .nav-menu.active {
 left: 0;
@@ -339,8 +347,8 @@ margin: -30px 10px 0 10px;
 
 <!-- ✅ CLICKABLE LOGO -->
 <a href="index.html" class="logo">
-<i class="fas fa-heart-pulse"></i>
-MediCarePlus
+<img src="assets/images/logo.jpeg" class="logo-img">
+NSK Hospital
 </a>
 
 <ul class="nav-menu">

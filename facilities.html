@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facilities | MediCare Plus</title>
+    <title>Facilities | NSK Hospital</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
@@ -76,6 +76,13 @@
             gap: 10px;
             text-decoration: none;
         }
+      
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 8px;
+       }
 
         .logo i {
             color: #e63946;
@@ -96,7 +103,7 @@
             padding-bottom: 5px;
         }
 
-        /* Desktop la icons hide */
+        /* Desktop icons hide */
         .nav-link i{
             display: none;
         }
@@ -141,7 +148,7 @@
 
         .page-header {
             background: linear-gradient(rgba(0, 77, 64, .9), rgba(0, 150, 136, .8)),
-                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
+                url('assets/images/background.jpg') center/cover;
             padding: 120px 0 60px;
             text-align: center;
             color: white;
@@ -294,17 +301,19 @@
 
         @media(max-width:768px) {
 
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background: white;
-                width: 100%;
-                height: 100vh;
-                padding: 30px 20px;
-                transition: .3s;
-            }
+           .nav-menu {
+position: fixed;
+top: 80px;
+left: -100%;
+flex-direction: column;
+background: white;
+width: 60%;
+height: 100vh;
+padding: 30px;
+gap: 20px;
+transition: .3s;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
 
             .nav-menu.active {
                 left: 0;
@@ -353,8 +362,8 @@
         <nav class="navbar">
 
             <a href="index.html" class="logo">
-                <i class="fas fa-heart-pulse"></i>
-                MediCarePlus
+                <img src="assets/images/logo.jpeg" class="logo-img">
+                NSK Hospital
             </a>
 
             <ul class="nav-menu">
@@ -391,7 +400,7 @@
                     <div class="facility-icon"><i class="fas fa-user-md"></i></div>
                     <div class="facility-image">
                         <img
-                            src="assets/images/opd.jpg" alt="OPD Facility">
+                            src="assets/images/opdimg1.jpg" alt="OPD Facility">
                     </div>
                     <div class="facility-content">
                         <h2>OPD</h2>
@@ -425,7 +434,7 @@
                     <div class="facility-icon"><i class="fas fa-flask"></i></div>
                     <div class="facility-image">
                         <img
-                            src="assets/images/laboratory.jpg" alt="24 Hours Laboratory">
+                            src="assets/images/laboratoryimg1.jpg" alt="24 Hours Laboratory">
                     </div>
                     <div class="facility-content">
                         <h2>24 Hours Laboratory</h2>
@@ -493,7 +502,7 @@
                     <div class="facility-icon"><i class="fas fa-vial"></i></div>
                     <div class="facility-image">
                         <img
-                            src="assets/images/iui-lab.jpg" alt="IUI Lab">
+                            src="assets/images/IUI-labimg1.jpg" alt="IUI Lab">
                     </div>
                     <div class="facility-content">
                         <h2>IUI Lab</h2>
@@ -510,7 +519,7 @@
                     <div class="facility-icon"><i class="fas fa-pills"></i></div>
                     <div class="facility-image">
                         <img
-                            src="assets/images/medical.jpg" alt="Medical Shop">
+                            src="assets/images/medicalimg1.jpg" alt="Medical Shop">
                     </div>
                     <div class="facility-content">
                         <h2>Medical Shop</h2>
@@ -527,7 +536,7 @@
                     <div class="facility-icon"><i class="fas fa-elevator"></i></div>
                     <div class="facility-image">
                         <img
-                            src="assets/images/lift.jpg" alt="Lift Facility">
+                            src="assets/images/liftimg1.jpg" alt="Lift Facility">
                     </div>
                     <div class="facility-content">
                         <h2>Lift Facility</h2>

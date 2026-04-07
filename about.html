@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | MediCare Plus</title>
+<title>About Us | NSK Hospital</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +28,15 @@ color:var(--dark);
 }
 
 /* HEADER */
+
+ .page-header {
+            background: linear-gradient(rgba(0, 77, 64, 0.85), rgba(0, 150, 136, 0.8)),
+                url('assets/images/background.jpg') center/cover;
+            padding: 130px 0 70px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
 
 .header{
 position:fixed;
@@ -56,6 +65,13 @@ gap:10px;
 text-decoration: none;
 }
 
+.logo-img {
+width: 55px;
+height: 55px;
+object-fit: cover;
+border-radius: 8px;
+}
+
 .logo i{color:#e63946;}
 
 .nav-menu{
@@ -74,7 +90,7 @@ padding-bottom:5px;
 transition:.3s;
 }
 
-/* Desktop la icons hide */
+/* Desktop icons hide */
 .nav-link i{
 display: none;
 }
@@ -104,9 +120,10 @@ transition:.3s;
 margin-top:80px;
 padding:80px 6%;
 text-align:center;
-background:linear-gradient(rgba(0,150,136,.9),rgba(0,77,64,.9));
-color:white;
+background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+url('assets/images/background.jpg') center/cover;
 }
+
 
 .hero h1{font-size:2.5rem;margin-bottom:10px;}
 
@@ -138,24 +155,43 @@ margin-bottom:15px;
 
 /* DOCTORS */
 
-.doctor-card{
+.doctor-row{
+display:flex;
+align-items:center;
+gap:40px;
 background:white;
+padding:30px;
 border-radius:15px;
-overflow:hidden;
 box-shadow:var(--shadow);
-cursor:pointer;
-transition:.4s;
+margin-top:30px;
 }
 
-.doctor-card:hover{transform:translateY(-8px);}
-
-.doctor-card img{
-width:100%;
-height:250px;
+.doctor-image img{
+width:300px;
+height:300px;
 object-fit:cover;
+border-radius:15px;
 }
 
-.doctor-info{padding:20px;}
+.doctor-content h2{
+color:var(--secondary);
+margin-bottom:10px;
+}
+
+.doctor-content ul{
+margin:15px 0;
+padding-left:20px;
+}
+
+.doctor-content ul li{
+margin-bottom:8px;
+}
+
+.read-more{
+color:var(--primary);
+cursor:pointer;
+font-weight:600;
+}
 
 /* MODAL */
 
@@ -229,17 +265,30 @@ padding:20px;
 
 @media(max-width:768px){
 
-.nav-menu{
-position:fixed;
-top:80px;
-left:-100%;
+.doctor-row{
 flex-direction:column;
-background:white;
-width:100%;
-height:100vh;
-padding:30px 20px;
-transition:.3s;
+text-align:center;
 }
+
+.doctor-image img{
+width:200px;
+height:200px;
+}
+
+         .nav-menu {
+position: fixed;
+top: 80px;
+left: -100%;
+flex-direction: column;
+background: white;
+width: 60%;
+height: 100vh;
+padding: 30px;
+gap: 20px;
+transition: .3s;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
 
 .nav-menu.active{left:0;}
 .hamburger{display:block;}
@@ -250,7 +299,11 @@ display: inline-block;
 margin-right: 10px;
 color: var(--primary);
 }
-
+.left-list {
+  text-align: left;
+  padding-left: 20px; /* bullet gap */
+  margin-left: 0;
+}
 }
 
 </style>
@@ -262,8 +315,8 @@ color: var(--primary);
 <nav class="navbar">
 
 <a href="index.html" class="logo">
-<i class="fas fa-heart-pulse"></i>
-MediCarePlus
+<img src="assets/images/logo.jpeg" class="logo-img">
+NSK Hospital
 </a>
 
 <ul class="nav-menu">
@@ -284,10 +337,15 @@ MediCarePlus
 </nav>
 </header>
 
-<section class="hero">
-<h1>About MediCarePlus</h1>
+<section class="page-header">
+<h1>About NSK Hospital</h1>
 <p>Trusted healthcare with compassion</p>
 </section>
+
+<!-- <section class="hero">
+<h1>About NSK Hospital</h1>
+<p>Trusted healthcare with compassion</p>
+</section> -->
 
 <section class="section">
 <div class="grid">
@@ -300,7 +358,7 @@ MediCarePlus
 <div class="card">
 <i class="fas fa-building"></i>
 <h3>Infrastructure</h3>
-<p>150+ beds, ICU, modern labs.</p>
+<p> ICU, modern labs.</p>
 </div>
 
 <div class="card">
@@ -313,27 +371,34 @@ MediCarePlus
 
 <!-- DOCTORS -->
 <section class="section">
-<h2>Our Doctors</h2>
+<h2>Our Doctor</h2>
 
-<div class="grid">
+<div class="doctor-row">
 
-<div class="doctor-card" onclick="openModal('Dr. Ramesh Kumar','Cardiologist with 15+ years experience')">
-<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80">
-<div class="doctor-info">
-<h4>Dr. Ramesh Kumar</h4>
-<p>Cardiologist</p>
-</div>
+<div class="doctor-image">
+<img src="assets/images/doc.jpg" alt="Doctor">
 </div>
 
-<div class="doctor-card" onclick="openModal('Dr. Priya Sharma','Orthopedic specialist with 12+ years experience')">
-<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80">
-<div class="doctor-info">
-<h4>Dr. Priya Sharma</h4>
-<p>Orthopedic</p>
-</div>
+<div class="doctor-content">
+<h2><i class="fas fa-user-md"></i> Dr. Selvi Kumudham</h2>
+<p><strong>Gynecologist</strong></p>
+
+<ul style="text-align: left; padding-left: 20px;">
+  <li>Pregnancy Care</li>
+  <li>Women’s Health</li>
+  <li>Delivery & Treatment</li>
+  <li>Preventive Care</li>
+</ul>
+
+<span class="read-more"
+onclick="openModal('Dr. Selvi Kumudham','Senior Consultant – Obstetrics & Gynecology\n\nExperience:\nPracticing medicine since 1998 (25+ years of experience)\n\nSpecializations:\n- High-risk obstetrics (complicated pregnancies)\n- Gynecology care\n- Women’s cancer prevention & screening\n- Infertility treatment')">
+Click for Details
+</span>
+
 </div>
 
 </div>
+
 </section>
 
 <!-- TESTIMONIALS -->
