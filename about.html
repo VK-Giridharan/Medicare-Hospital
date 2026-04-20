@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | MediCare Plus</title>
+<title>About Us | NS Kumudham  Hospital</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +28,15 @@ color:var(--dark);
 }
 
 /* HEADER */
+
+ .page-header {
+            background: linear-gradient(rgba(0, 77, 64, 0.85), rgba(0, 150, 136, 0.8)),
+                url('assets/images/background.jpg') center/cover;
+            padding: 130px 0 70px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
 
 .header{
 position:fixed;
@@ -53,6 +62,35 @@ font-size:1.7rem;
 font-weight:700;
 color:var(--primary);
 gap:10px;
+text-decoration: none;
+}
+
+.logo-img {
+width: 55px;
+height: 55px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-ns {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo-right {
+  display: flex;
+  gap: 5px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 1.7rem;
 }
 
 .logo i{color:#e63946;}
@@ -71,6 +109,162 @@ color:#333;
 text-decoration:none;
 padding-bottom:5px;
 transition:.3s;
+}
+
+/* GALLERY PREVIEW */
+
+.gallery-preview{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.gallery-preview img{
+width:150px;
+height:100px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.gallery-preview img:hover{
+transform:scale(1.05);
+}
+
+/* MODAL */
+
+.gallery-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+
+/* SLIDER */
+
+.gallery-slider{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
+
+.main-img{
+width:500px;
+height:320px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.side-img{
+width:200px;
+height:250px;
+object-fit:cover;
+filter:blur(4px);
+opacity:0.6;
+border-radius:15px;
+}
+
+/* BUTTONS */
+
+.nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:none;
+border:none;
+font-size:2rem;
+color:white;
+cursor:pointer;
+}
+
+.nav{
+z-index: 4000; /* VERY IMPORTANT */
+}
+
+.prev{left:40px;}
+.next{right:40px;}
+
+.prev, .next{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.3); /* optional */
+border-radius:50%;
+}
+
+/* GALLERY CARD COLLAGE */
+
+.gallery-card{
+cursor:pointer;
+}
+
+.gallery-card{
+max-width: 650px;
+width:100%;
+margin: 0 auto;
+}
+.gallery-collage{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:6px;
+margin:10px 0;
+}
+
+.gallery-collage img{
+width:100%;
+height:70px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.gallery-section{
+padding:5px 6%; /* before 60px */
+}
+
+/* hover effect */
+.gallery-card:hover .gallery-collage img{
+transform:scale(1.05);
+transition:.3s;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.main-img{
+width:280px;
+height:200px;
+}
+
+.side-img{
+width:120px;
+height:150px;
+}
+
+.prev{left:10px;}
+.next{right:10px;}
+
+.prev{
+left:5px;  /* before 10px */
+}
+
+.next{
+right:5px;
+}
+
+}
+
+/* Desktop icons hide */
+.nav-link i{
+display: none;
 }
 
 .nav-link::after{
@@ -98,9 +292,10 @@ transition:.3s;
 margin-top:80px;
 padding:80px 6%;
 text-align:center;
-background:linear-gradient(rgba(0,150,136,.9),rgba(0,77,64,.9));
-color:white;
+background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+url('assets/images/background.jpg') center/cover;
 }
+
 
 .hero h1{font-size:2.5rem;margin-bottom:10px;}
 
@@ -132,24 +327,43 @@ margin-bottom:15px;
 
 /* DOCTORS */
 
-.doctor-card{
+.doctor-row{
+display:flex;
+align-items:center;
+gap:40px;
 background:white;
+padding:30px;
 border-radius:15px;
-overflow:hidden;
 box-shadow:var(--shadow);
-cursor:pointer;
-transition:.4s;
+margin-top:30px;
 }
 
-.doctor-card:hover{transform:translateY(-8px);}
-
-.doctor-card img{
-width:100%;
-height:250px;
+.doctor-image img{
+width:300px;
+height:300px;
 object-fit:cover;
+border-radius:15px;
 }
 
-.doctor-info{padding:20px;}
+.doctor-content h2{
+color:var(--secondary);
+margin-bottom:10px;
+}
+
+.doctor-content ul{
+margin:15px 0;
+padding-left:20px;
+}
+
+.doctor-content ul li{
+margin-bottom:8px;
+}
+
+.read-more{
+color:var(--primary);
+cursor:pointer;
+font-weight:600;
+}
 
 /* MODAL */
 
@@ -223,21 +437,67 @@ padding:20px;
 
 @media(max-width:768px){
 
-.nav-menu{
-position:fixed;
-top:80px;
-left:-100%;
-flex-direction:column;
-background:white;
-width:100%;
-height:100vh;
-padding-top:30px;
-transition:.3s;
+  .logo-text {
+  display: flex;
+  align-items: center;
 }
+
+.logo-ns {
+  font-size: 2.3rem;
+  font-weight: 700;/* BIG NS */
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column; /* Kumudham ↓ Hospital */
+  line-height: 1.1;
+  margin-left: 4px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 0.85rem;
+}
+
+.doctor-row{
+flex-direction:column;
+text-align:center;
+}
+
+.doctor-image img{
+width:200px;
+height:200px;
+}
+
+         .nav-menu {
+position: fixed;
+top: 80px;
+left: -100%;
+flex-direction: column;
+background: white;
+width: 60%;
+height: 100vh;
+padding: 30px;
+gap: 20px;
+transition: .3s;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
 
 .nav-menu.active{left:0;}
 .hamburger{display:block;}
 
+/* Mobile Icons */
+.nav-link i{
+display: inline-block;
+margin-right: 10px;
+color: var(--primary);
+}
+.left-list {
+  text-align: left;
+  padding-left: 20px; /* bullet gap */
+  margin-left: 0;
+}
 }
 
 </style>
@@ -248,18 +508,26 @@ transition:.3s;
 <header class="header">
 <nav class="navbar">
 
-<div class="logo">
-<i class="fas fa-heart-pulse"></i>
-MediCarePlus
-</div>
+<a href="index.html" class="logo">
+  <img src="assets/images/logo.jpeg" class="logo-img">
+
+  <div class="logo-text">
+    <span class="logo-ns">NS</span>
+
+    <div class="logo-right">
+      <span class="logo-top">Kumudham</span>
+      <span class="logo-bottom">Hospital</span>
+    </div>
+  </div>
+</a>
 
 <ul class="nav-menu">
-<li><a href="index.html" class="nav-link">Home</a></li>
-<li><a href="speciality.html" class="nav-link">Speciality</a></li>
-<li><a href="facilities.html" class="nav-link">Facilities</a></li>
-<li><a href="departments.html" class="nav-link">Departments</a></li>
-<li><a href="about.html" class="nav-link active">About Us</a></li>
-<li><a href="contact.html" class="nav-link">Contact</a></li>
+<li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+<li><a href="speciality.html" class="nav-link"><i class="fas fa-stethoscope"></i>Speciality</a></li>
+<li><a href="facilities.html" class="nav-link"><i class="fas fa-hospital"></i>Facilities</a></li>
+<li><a href="departments.html" class="nav-link"><i class="fas fa-building"></i>Departments</a></li>
+<li><a href="about.html" class="nav-link active"><i class="fas fa-users"></i>About Us</a></li>
+<li><a href="contact.html" class="nav-link"><i class="fas fa-phone"></i>Contact</a></li>
 </ul>
 
 <div class="hamburger">
@@ -271,23 +539,28 @@ MediCarePlus
 </nav>
 </header>
 
-<section class="hero">
-<h1>About MediCarePlus</h1>
+<section class="page-header">
+<h1>About NS Kumudham Hospital</h1>
 <p>Trusted healthcare with compassion</p>
 </section>
+
+<!-- <section class="hero">
+<h1>About NS Kumudham Hospital</h1>
+<p>Trusted healthcare with compassion</p>
+</section> -->
 
 <section class="section">
 <div class="grid">
 <div class="card">
 <i class="fas fa-hospital"></i>
 <h3>Hospital History</h3>
-<p>Established in 2010 delivering quality healthcare.</p>
+<p>Established in 2013 delivering quality healthcare.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-building"></i>
 <h3>Infrastructure</h3>
-<p>150+ beds, ICU, modern labs.</p>
+<p> ICU, modern labs.</p>
 </div>
 
 <div class="card">
@@ -298,29 +571,57 @@ MediCarePlus
 </div>
 </section>
 
+<section class="section gallery-section">
+  <div class="grid">
+
+    <!-- GALLERY CARD -->
+    <div class="card gallery-card" onclick="openGallery(0)">
+      <i class="fas fa-images"></i>
+      <h3>Gallery</h3>
+
+      <div class="gallery-collage">
+        <img src="assets/images/Gallery/g1.jpg">
+        <img src="assets/images/Gallery/g2.jpg">
+        <img src="assets/images/Gallery/g3.jpg">
+        <img src="assets/images/Gallery/g4.jpg">
+      </div>
+
+      <p>View hospital photos</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- DOCTORS -->
 <section class="section">
-<h2>Our Doctors</h2>
+<h2>Our Doctor</h2>
 
-<div class="grid">
+<div class="doctor-row">
 
-<div class="doctor-card" onclick="openModal('Dr. Ramesh Kumar','Cardiologist with 15+ years experience')">
-<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80">
-<div class="doctor-info">
-<h4>Dr. Ramesh Kumar</h4>
-<p>Cardiologist</p>
-</div>
+<div class="doctor-image">
+<img src="assets/images/doc.jpg" alt="Doctor">
 </div>
 
-<div class="doctor-card" onclick="openModal('Dr. Priya Sharma','Orthopedic specialist with 12+ years experience')">
-<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80">
-<div class="doctor-info">
-<h4>Dr. Priya Sharma</h4>
-<p>Orthopedic</p>
-</div>
+<div class="doctor-content">
+<h2><i class="fas fa-user-md"></i> Dr. Selvi Kumudham</h2>
+<p><strong>Gynecologist</strong></p>
+
+<ul style="text-align: left; padding-left: 20px;">
+  <li>Pregnancy Care</li>
+  <li>Women’s Health</li>
+  <li>Delivery & Treatment</li>
+  <li>Preventive Care</li>
+</ul>
+
+<span class="read-more"
+onclick="openModal('Dr. Selvi Kumudham','Senior Consultant – Obstetrics & Gynecology\n\nExperience:\nPracticing medicine since 1998 (25+ years of experience)\n\nSpecializations:\n- High-risk obstetrics (complicated pregnancies)\n- Gynecology care\n- Women’s cancer prevention & screening\n- Infertility treatment')">
+Click for Details
+</span>
+
 </div>
 
 </div>
+
 </section>
 
 <!-- TESTIMONIALS -->
@@ -365,6 +666,66 @@ MediCarePlus
 
 <script>
 
+const images = [
+"assets/images/Gallery/g1.jpg",
+"assets/images/Gallery/g2.jpg",
+"assets/images/Gallery/g3.jpg",
+"assets/images/Gallery/g4.jpg",
+"assets/images/Gallery/g5.jpg",
+"assets/images/Gallery/g6.jpg",
+"assets/images/Gallery/g7.jpg",
+"assets/images/Gallery/g8.jpg",
+"assets/images/Gallery/g9.jpg",
+"assets/images/Gallery/g10.jpg",
+"assets/images/Gallery/g11.jpg",
+"assets/images/Gallery/g12.jpg",
+"assets/images/Gallery/g13.jpg",
+"assets/images/Gallery/g14.jpg",
+"assets/images/Gallery/g15.jpg"
+];
+
+let currentIndex = 0;
+
+function openGallery(index){
+currentIndex = index;
+document.getElementById("galleryModal").style.display="flex";
+updateGallery();
+}
+
+function closeGallery(){
+document.getElementById("galleryModal").style.display="none";
+}
+
+function updateGallery(){
+
+let prev = (currentIndex - 1 + images.length) % images.length;
+let next = (currentIndex + 1) % images.length;
+
+document.getElementById("mainImg").src = images[currentIndex];
+document.getElementById("prevImg").src = images[prev];
+document.getElementById("nextImg").src = images[next];
+}
+
+function changeSlide(step){
+currentIndex = (currentIndex + step + images.length) % images.length;
+updateGallery();
+}
+
+/* KEYBOARD CONTROL */
+
+document.addEventListener("keydown", function(e){
+if(document.getElementById("galleryModal").style.display === "flex"){
+
+if(e.key === "ArrowRight"){
+changeSlide(1);
+}
+if(e.key === "ArrowLeft"){
+changeSlide(-1);
+}
+
+}
+});
+
 const hamburger=document.querySelector(".hamburger");
 const navMenu=document.querySelector(".nav-menu");
 
@@ -383,6 +744,22 @@ document.getElementById("doctorModal").style.display="none";
 }
 
 </script>
+
+<div class="gallery-modal" id="galleryModal">
+
+  <span class="close" onclick="closeGallery()">&times;</span>
+
+  <button class="nav prev" onclick="changeSlide(-1)">❮</button>
+
+  <div class="gallery-slider">
+    <img id="prevImg" class="side-img">
+    <img id="mainImg" class="main-img">
+    <img id="nextImg" class="side-img">
+  </div>
+
+  <button class="nav next" onclick="changeSlide(1)">❯</button>
+
+</div>
 
 </body>
 </html>

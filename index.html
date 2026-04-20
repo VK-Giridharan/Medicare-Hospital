@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MediCare Plus | Premium Healthcare</title>
+<title>NS Kumudham Hospital | Premium Healthcare</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -52,6 +52,55 @@ align-items: center;
 padding: 18px 6%;
 }
 
+/* ===== LOADER ===== */
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blur background (shows site behind) */
+.loader-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.3); /* light glass effect */
+}
+
+/* Logo animation */
+.loader-logo {
+  width: 200px;
+  z-index: 2;
+  animation: proZoom 2s ease forwards;
+}
+
+/* Animation */
+@keyframes proZoom {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
 /* ✅ LOGO CLICKABLE */
 .logo {
 display: flex;
@@ -62,6 +111,35 @@ font-weight: 700;
 color: var(--primary);
 gap: 10px;
 text-decoration: none;
+}
+
+.logo-img {
+width: 55px;
+height: 55px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-ns {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo-right {
+  display: flex;
+  gap: 5px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 1.7rem;
+
 }
 
 .logo i {
@@ -123,7 +201,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
+url('assets/images/background.jpg') center/cover;
 }
 
 .slider {
@@ -214,19 +292,51 @@ margin: 5px;
 
 @media(max-width:768px){
 
-.nav-menu {
+  .logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-ns {
+  font-size: 2.3rem;
+  font-weight: 700; /* BIG NS */
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column; /* Kumudham ↓ Hospital */
+  line-height: 1.1;
+  margin-left: 4px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 0.85rem;
+}
+
+         .nav-menu {
 position: fixed;
 top: 80px;
 left: -100%;
 flex-direction: column;
 background: white;
-width: 90%;
+width: 60%;
 height: 100vh;
 padding: 30px;
 gap: 20px;
 transition: .3s;
 box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+
+.logo {
+  font-size: 1.2rem; /* reduce text size */
+}
+
+.logo-img {
+  width: 40px;  /* smaller logo */
+  height: 40px;
+}
+
 
 .nav-menu.active {
 left: 0;
@@ -263,10 +373,23 @@ padding: 20px 0;
 <header class="header">
 <nav class="navbar">
 
+    <div id="loader">
+  <div class="loader-overlay"></div>
+  <img src="assets/images/logo-Photoroom.png" class="loader-logo">
+</div>
+
 <!-- ✅ CLICKABLE LOGO -->
 <a href="index.html" class="logo">
-<i class="fas fa-heart-pulse"></i>
-MediCarePlus
+  <img src="assets/images/logo.jpeg" class="logo-img">
+
+  <div class="logo-text">
+    <span class="logo-ns">NS</span>
+
+    <div class="logo-right">
+      <span class="logo-top">Kumudham</span>
+      <span class="logo-bottom">Hospital</span>
+    </div>
+  </div>
 </a>
 
 <ul class="nav-menu">
@@ -306,7 +429,7 @@ MediCarePlus
 <div class="slider">
 
 <div class="slide active">
-<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d">
+<img src="assets/images/slideimg2.jpg">
 <div class="slide-content">
 <h2>World Class Care</h2>
 <p>Advanced technology with compassion</p>
@@ -322,7 +445,7 @@ MediCarePlus
 </div>
 
 <div class="slide">
-<img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842">
+<img src="assets/images/slideimg1.jpg">
 <div class="slide-content">
 <h2>Expert Surgeons</h2>
 <p>Globally certified professionals</p>
@@ -410,5 +533,32 @@ slides[index].classList.add("active");
 
 </script>
 
+<script>
+window.addEventListener("load", () => {
+
+  const loader = document.getElementById("loader");
+
+  // Check if loader already shown
+  if (sessionStorage.getItem("loaderShown")) {
+    loader.style.display = "none";
+    return;
+  }
+
+  // First time show loader
+  setTimeout(() => {
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.5s ease";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500);
+
+    // Save flag
+    sessionStorage.setItem("loaderShown", "true");
+
+  }, 2000);
+
+});
+</script>
 </body>
 </html>

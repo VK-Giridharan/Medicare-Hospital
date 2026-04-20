@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departments | MediCare Plus</title>
+    <title>Departments | NS Kumudham Hospital</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +28,34 @@
             color: var(--text);
         }
 
+        .modal {
+display: none;
+position: fixed;
+z-index: 2000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+background: white;
+margin: 10% auto;
+padding: 25px;
+width: 90%;
+max-width: 400px;
+border-radius: 10px;
+text-align: center;
+}
+
+.close-btn {
+position: absolute;
+right: 20px;
+top: 10px;
+font-size: 25px;
+cursor: pointer;
+}
         /* ===== HEADER FIXED ===== */
 
         .header {
@@ -54,7 +82,36 @@
             font-weight: 700;
             color: var(--primary);
             gap: 10px;
+            text-decoration: none;
         }
+        
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-ns {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo-right {
+  display: flex;
+  gap: 5px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 1.7rem;
+}
 
         .logo i {
             color: #e63946;
@@ -75,6 +132,11 @@
             padding-bottom: 5px;
             text-decoration: none;
             transition: .3s;
+        }
+
+        /* Desktop icons hide */
+        .nav-link i{
+            display: none;
         }
 
         .nav-link::after {
@@ -117,7 +179,7 @@
 
         .page-header {
             background: linear-gradient(rgba(0, 77, 64, 0.85), rgba(0, 150, 136, 0.8)),
-                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80') center/cover;
+                url('assets/images/background.jpg') center/cover;
             padding: 130px 0 70px;
             text-align: center;
             color: white;
@@ -137,7 +199,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: .4s;
-            cursor: pointer;
+            cursor: default;
         }
 
         .department-card:hover {
@@ -197,20 +259,59 @@
         }
 
         @media(max-width:768px) {
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background: white;
-                width: 100%;
-                height: 100vh;
-                padding-top: 30px;
-                transition: .3s;
-            }
+
+            .logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-ns {
+  font-size: 2.3rem; 
+  font-weight: 700;/* BIG NS */
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column; /* Kumudham ↓ Hospital */
+  line-height: 1.1;
+  margin-left: 4px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 0.85rem;
+}
+
+                    .nav-menu {
+position: fixed;
+top: 80px;
+left: -100%;
+flex-direction: column;
+background: white;
+width: 60%;
+height: 100vh;
+padding: 30px;
+gap: 20px;
+transition: .3s;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
 
             .nav-menu.active { left: 0; }
             .hamburger { display: block; }
+
+            /* Mobile Icons */
+            .nav-link i{
+                display: inline-block;
+                margin-right: 10px;
+                color: var(--primary);
+            }
+
+            .left-list {
+                text-align: left;
+                padding-left: 20px; /* bullet gap */
+                margin-left: 0;
+            }
         }
 
     </style>
@@ -221,18 +322,26 @@
 <header class="header">
 <nav class="navbar">
 
-<div class="logo">
-<i class="fas fa-heart-pulse"></i>
-MediCarePlus
-</div>
+<a href="index.html" class="logo">
+  <img src="assets/images/logo.jpeg" class="logo-img">
+
+  <div class="logo-text">
+    <span class="logo-ns">NS</span>
+
+    <div class="logo-right">
+      <span class="logo-top">Kumudham</span>
+      <span class="logo-bottom">Hospital</span>
+    </div>
+  </div>
+</a>
 
 <ul class="nav-menu">
-<li><a href="index.html" class="nav-link">Home</a></li>
-<li><a href="speciality.html" class="nav-link">Speciality</a></li>
-<li><a href="facilities.html" class="nav-link">Facilities</a></li>
-<li><a href="departments.html" class="nav-link active">Departments</a></li>
-<li><a href="about.html" class="nav-link">About Us</a></li>
-<li><a href="contact.html" class="nav-link">Contact</a></li>
+<li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+<li><a href="speciality.html" class="nav-link"><i class="fas fa-stethoscope"></i>Speciality</a></li>
+<li><a href="facilities.html" class="nav-link"><i class="fas fa-hospital"></i>Facilities</a></li>
+<li><a href="departments.html" class="nav-link active"><i class="fas fa-building"></i>Departments</a></li>
+<li><a href="about.html" class="nav-link"><i class="fas fa-users"></i>About Us</a></li>
+<li><a href="contact.html" class="nav-link"><i class="fas fa-phone"></i>Contact</a></li>
 </ul>
 
 <div class="hamburger">
@@ -256,7 +365,7 @@ MediCarePlus
 <!-- Obstetrics -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/obstetrics.jpg" alt="Obstetrics">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-baby"></i> Obstetrics</h2>
@@ -265,31 +374,35 @@ MediCarePlus
 <li>Cesarean Delivery</li>
 <li>High Risk Pregnancy</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Safe maternity care with modern monitoring.</div>
+<span class="read-more"
+data-title="Obstetrics"
+data-text="Safe maternity care with modern monitoring.">Click for Details</span>
+<!-- <div class="expand-content">Safe maternity care with modern monitoring.</div> -->
 </div>
 </div>
 
-<!-- Gynaecology -->
+<!-- Gynecology -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/gynecology.jpg" alt="Gynecology">
 </div>
 <div class="department-content">
-<h2><i class="fas fa-female"></i> Gynaecology</h2>
+<h2><i class="fas fa-female"></i> Gynecology</h2>
 <ul>
 <li>PCOD / PCOS</li>
 <li>Fibroid Treatment</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Complete women health and surgery support.</div>
+<span class="read-more"
+data-title="Gynecology"
+data-text="Complete women health and surgery support.">Click for Details</span>
+<!-- <div class="expand-content">Complete women health and surgery support.</div> -->
 </div>
 </div>
 
 <!-- Ultrasound -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/US.jpg" alt="Ultrasound">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-wave-square"></i> Ultrasound</h2>
@@ -297,15 +410,17 @@ MediCarePlus
 <li>Pregnancy Scan</li>
 <li>Diagnostic Imaging</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Advanced imaging for diagnosis.</div>
+<span class="read-more"
+data-title="Ultrasound"
+data-text="Advanced imaging for diagnosis.">Click for Details</span>
+<!-- <div class="expand-content">Advanced imaging for diagnosis.</div> -->
 </div>
 </div>
 
 <!-- Women Cancer -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1580281657527-47a6e0f9c54d?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/woman-cancer.jpg" alt="Women Cancer">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-ribbon"></i> Women Cancer Prevention</h2>
@@ -313,15 +428,17 @@ MediCarePlus
 <li>Screening</li>
 <li>Early Detection</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Early cancer detection & awareness.</div>
+<span class="read-more" 
+data-title="Women Cancer" 
+data-text="Early cancer detection & awareness.">Click for Details</span>
+<!-- <div class="expand-content">Early cancer detection & awareness.</div> -->
 </div>
 </div>
 
 <!-- General Surgery -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1580281657527-47a6e0f9c54d?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/general-surgery.jpg" alt="General Surgery">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-user-md"></i> General Surgery</h2>
@@ -329,15 +446,17 @@ MediCarePlus
 <li>Basic Surgery</li>
 <li>Emergency Surgery</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Comprehensive surgical care.</div>
+<span class="read-more"
+data-title="General Surgery"
+data-text="Comprehensive surgical care.">Click for Details</span>
+<!-- <div class="expand-content">Comprehensive surgical care.</div> -->
 </div>
 </div>
 
 <!-- Laparoscopic -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/laparoscopic-surgery.jpg" alt="Laparoscopic Surgery">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-stethoscope"></i> Laparoscopic Surgery</h2>
@@ -345,15 +464,17 @@ MediCarePlus
 <li>Minimally Invasive</li>
 <li>Fast Recovery</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Modern minimal surgery techniques.</div>
+<span class="read-more"
+data-title="Laparoscopic"
+data-text="Modern minimal surgery techniques.">Click for Details</span>
+<!-- <div class="expand-content">Modern minimal surgery techniques.</div> -->
 </div>
 </div>
 
 <!-- Infertility -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/infertility.jpg" alt="Infertility / IUI Lab">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-flask"></i> Infertility / IUI Lab</h2>
@@ -361,15 +482,17 @@ MediCarePlus
 <li>IUI Treatment</li>
 <li>Fertility Support</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Helping couples achieve parenthood.</div>
+<span class="read-more"
+data-title="Infertility"
+data-text="Helping couples achieve parenthood.">Click for Details</span>
+<!-- <div class="expand-content">Helping couples achieve parenthood.</div> -->
 </div>
 </div>
 
 <!-- PCOD -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1580281657527-47a6e0f9c54d?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/pcod.jpg" alt="PCOD Clinic">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-heartbeat"></i> PCOD Clinic</h2>
@@ -377,15 +500,17 @@ MediCarePlus
 <li>Hormonal Treatment</li>
 <li>Diet & Care</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Special care for PCOD conditions.</div>
+<span class="read-more"
+data-title="PCOD"
+data-text="Special care for PCOD conditions.">Click for Details</span>
+<!-- <div class="expand-content">Special care for PCOD conditions.</div> -->
 </div>
 </div>
 
 <!-- Weight -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/weight-reduction.jpg" alt="Weight Reduction">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-weight"></i> Weight Reduction</h2>
@@ -393,15 +518,17 @@ MediCarePlus
 <li>Diet Plans</li>
 <li>Fitness Guidance</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Healthy weight management.</div>
+<span class="read-more"
+data-title="Weight Reduction"
+data-text="Healthy weight management.">Click for Details</span>
+<!-- <div class="expand-content">Healthy weight management.</div> -->
 </div>
 </div>
 
 <!-- Sex Education -->
 <div class="department-card">
 <div class="department-image">
-<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=800&q=80">
+<img src="assets/images/education.jpg" alt="Sex Education">
 </div>
 <div class="department-content">
 <h2><i class="fas fa-book"></i> Sex Education</h2>
@@ -409,12 +536,23 @@ MediCarePlus
 <li>Couples Guidance</li>
 <li>Adolescent Awareness</li>
 </ul>
-<span class="read-more">Click for Details</span>
-<div class="expand-content">Education for healthy relationships.</div>
+<span class="read-more"
+data-title="Sex Education"
+data-text="Education for healthy relationships.">Click for Details</span>
+<!-- <div class="expand-content">Education for healthy relationships.</div> -->
 </div>
 </div>
 
 </section>
+
+<div id="detailsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+
 
 <script>
 
@@ -425,11 +563,28 @@ hamburger.addEventListener("click", () => {
 navMenu.classList.toggle("active");
 });
 
-document.querySelectorAll(".department-card").forEach(card => {
-card.addEventListener("click", () => {
-card.classList.toggle("active");
+const modal = document.getElementById("detailsModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const closeBtn = document.querySelector(".close-btn");
+
+document.querySelectorAll(".read-more").forEach(btn => {
+btn.addEventListener("click", () => {
+
+modal.style.display = "block";
+modalTitle.innerText = btn.getAttribute("data-title");
+modalText.innerText = btn.getAttribute("data-text");
+
 });
 });
+
+closeBtn.onclick = () => modal.style.display = "none";
+
+window.onclick = (e) => {
+if(e.target == modal){
+modal.style.display = "none";
+}
+};
 
 </script>
 

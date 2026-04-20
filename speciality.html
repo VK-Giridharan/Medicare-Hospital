@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Specialities | MediCare Plus</title>
+<title>Specialities | NS Kumudham Hospital</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,6 +68,34 @@ font-weight: 700;
 color: var(--primary);
 gap: 10px;
 text-decoration: none;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-ns {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo-right {
+  display: flex;
+  gap: 5px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 1.7rem;
+}
+
+.logo-img {
+width: 55px;
+height: 55px;
+object-fit: cover;
+border-radius: 8px;
 }
 
 .logo i {
@@ -135,7 +163,7 @@ margin: 5px;
 
 .page-header {
 background: linear-gradient(rgba(0, 77, 64, .9), rgba(0, 150, 136, .8)),
-url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover;
+url('assets/images/background.jpg') center/cover;
 padding: 130px 0 60px;
 text-align: center;
 color: white;
@@ -246,19 +274,54 @@ margin-top: 60px;
 
 @media(max-width:768px){
 
-.nav-menu {
+  .logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-ns {
+  font-size: 2.3rem;
+  font-weight: 700; /* BIG NS */
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column; /* Kumudham ↓ Hospital */
+  line-height: 1.1;
+  margin-left: 4px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 0.85rem;
+}
+
+    /* ✅ Make all cards equal height in mobile */
+.zigzag-item {
+  align-items: stretch;
+}
+
+.zigzag-content {
+  min-height: 260px; /* adjust based on your design */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+         .nav-menu {
 position: fixed;
 top: 80px;
 left: -100%;
 flex-direction: column;
 background: white;
-width: 90%;
+width: 60%;
 height: 100vh;
 padding: 30px;
 gap: 20px;
 transition: .3s;
 box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+
 
 .nav-menu.active {
 left: 0;
@@ -286,6 +349,38 @@ margin: -30px 10px 0 10px;
 
 }
 
+/* 🔽 ADD AT END OF YOUR STYLE */
+
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Modal Box */
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 </style>
 </head>
 
@@ -296,8 +391,15 @@ margin: -30px 10px 0 10px;
 
 <!-- ✅ CLICKABLE LOGO -->
 <a href="index.html" class="logo">
-<i class="fas fa-heart-pulse"></i>
-MediCarePlus
+<img src="assets/images/logo.jpeg" class="logo-img">
+ <div class="logo-text">
+    <span class="logo-ns">NS</span>
+
+    <div class="logo-right">
+      <span class="logo-top">Kumudham</span>
+      <span class="logo-bottom">Hospital</span>
+    </div>
+  </div>
 </a>
 
 <ul class="nav-menu">
@@ -343,55 +445,67 @@ MediCarePlus
 
 <div class="zigzag-item">
 <div class="zigzag-image">
-<img src="https://images.unsplash.com/photo-1559757175-5700dde675bc">
+<img src="assets/images/ob-gyn1.jpg" alt="Obstetrician & Gynecologist">
 </div>
 <div class="zigzag-content">
-<h2><i class="fas fa-heart"></i> Cardiology</h2>
+<h2><i class="fas fa-female"></i> Obstetrician & Gynecologist</h2>
 <ul>
-<li>Heart Disease Diagnosis</li>
-<li>ECG & Echo</li>
-<li>Cardiac Surgery</li>
+<li>Pregnancy Care (Obstetrics)</li>
+<li>Women’s Reproductive Health</li>
+<li>Disease Diagnosis & Treatment</li>
 <li>Preventive Care</li>
 </ul>
-<span class="read-more">Click for Details</span>
+<span class="read-more"
+data-title="Obstetrician & Gynecologist"
+data-text="Our Obstetrics and Gynecology department offers comprehensive care for women at every stage of life. We provide expert pregnancy care, safe delivery services, advanced gynecological treatments, fertility support, and preventive screenings. Our team ensures personalized care focusing on both mother and child well-being.">
+Click for Details
+</span>
 </div>
 </div>
 
 <div class="zigzag-item reverse">
 <div class="zigzag-image">
-<img src="https://images.unsplash.com/photo-1581595220892-b0739db338c5">
+<img src="assets/images/surgeon.jpg" alt="Surgeon">
 </div>
 <div class="zigzag-content">
-<h2><i class="fas fa-bone"></i> Orthopedics</h2>
+<h2><i class="fas fa-user-md"></i> Surgeon</h2>
 <ul>
-<li>Joint Replacement</li>
-<li>Sports Injury</li>
-<li>Spine Surgery</li>
-<li>Fracture Care</li>
+<li>Surgical Procedures</li>
+<li>Specialized Treatments</li>
+<li>Advanced Techniques</li>
+<li>Post-Operative Care</li>
 </ul>
-<span class="read-more">Click for Details</span>
+<span class="read-more"
+data-title="Surgeon"
+data-text="Our surgical department is equipped with advanced technology to perform a wide range of procedures with precision and safety. From minor surgeries to complex operations, our experienced surgeons ensure high success rates, minimal recovery time, and complete pre and post-operative care.">
+Click for Details
+</span>
 </div>
 </div>
 
 <div class="zigzag-item">
 <div class="zigzag-image">
-<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b">
+<img src="assets/images/plastic-surgeon.jpg" alt="Plastic Surgeon">
 </div>
 <div class="zigzag-content">
-<h2><i class="fas fa-brain"></i> Neurology</h2>
+<h2><i class="fas fa-magic"></i> Plastic Surgeon    </h2>
 <ul>
-<li>Stroke Treatment</li>
-<li>Epilepsy Care</li>
-<li>Brain Surgery</li>
-<li>Neuro Rehab</li>
+<li>Cosmetic Enhancement</li>
+<li>Reconstructive Surgery</li>
+<li>Facial & Body Procedures</li>
+<li>Functional Improvement</li>
 </ul>
-<span class="read-more">Click for Details</span>
+<span class="read-more"
+data-title="Plastic Surgeon"
+data-text="Our plastic surgery unit specializes in both cosmetic and reconstructive procedures. We help enhance appearance and restore function through treatments such as facial surgeries, scar revision, burn reconstruction, and aesthetic enhancements, ensuring natural and safe results.">
+Click for Details
+</span>
 </div>
 </div>
 
 <div class="zigzag-item reverse">
 <div class="zigzag-image">
-<img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
+<img src="assets/images/pediatrics.jpg" alt="Pediatrician">
 </div>
 <div class="zigzag-content">
 <h2><i class="fas fa-baby"></i> Pediatrics</h2>
@@ -401,12 +515,105 @@ MediCarePlus
 <li>Growth Monitoring</li>
 <li>Neonatal Care</li>
 </ul>
-<span class="read-more">Click for Details</span>
+<span class="read-more"
+data-title="Pediatrician"
+data-text="Our pediatric department provides comprehensive care for infants, children, and adolescents. We focus on preventive health, developmental monitoring, and treating common illnesses with a child-friendly approach.">
+Click for Details
+</span>
+</div>
+</div>
+
+<div class="zigzag-item">
+<div class="zigzag-image">
+<img src="assets/images/anesthetics.jpg" alt="Anesthetist">
+</div>
+<div class="zigzag-content">
+<h2><i class="fas fa-syringe"></i> Anesthetist</h2>
+<ul>
+<li>Anesthesia Administration</li>
+<li>Pain Management</li>
+<li>Vital Monitoring</li>
+<li>Post-Surgery Care</li>
+</ul>
+<span class="read-more"
+data-title="Anesthetist"
+data-text="Our anesthesiology team ensures safe and pain-free surgical experiences. We provide expert anesthesia administration, continuous monitoring of vital signs, and effective pain management before, during, and after procedures, prioritizing patient comfort and safety.">
+Click for Details
+</span>
+</div>
+</div>
+
+<div class="zigzag-item reverse">
+<div class="zigzag-image">
+<img src="assets/images/physician.jpg" alt="Physician">
+</div>
+<div class="zigzag-content">
+<h2><i class="fas fa-stethoscope"></i> Physician</h2>
+<ul>
+<li>General Diagnosis</li>
+<li>Primary Care</li>
+<li>Preventive Guidance</li>
+<li>Specialist Referral</li>
+</ul>
+<span class="read-more"
+data-title="Physician"
+data-text="Our physicians offer comprehensive primary healthcare services including diagnosis, treatment, and prevention of various medical conditions. We focus on long-term health management, routine check-ups, and personalized treatment plans to promote overall well-being.">
+Click for Details
+</span>
+</div>
+</div>
+
+<div class="zigzag-item">
+<div class="zigzag-image">
+<img src="assets/images/psychiatrist.jpg" alt="Psychiatrist">
+</div>
+<div class="zigzag-content">
+<h2><i class="fas fa-brain"></i> Psychiatrist</h2>
+<ul>
+<li>Mental Health Diagnosis</li>
+<li>Stress Management</li>
+<li>Emotional Support</li>
+<li>Behavioral Therapy</li>
+</ul>
+<span class="read-more"
+data-title="Psychiatrist"
+data-text="Our psychiatry department provides expert care for mental health conditions such as anxiety, depression, and stress-related disorders. We offer counseling, therapy, and medication management to support emotional well-being and improve quality of life.">
+Click for Details
+</span>
+</div>
+</div>
+
+<div class="zigzag-item reverse">
+<div class="zigzag-image">
+<img src="assets/images/physiotherapist.jpg" alt="Physiotherapist">
+</div>
+<div class="zigzag-content">
+<h2><i class="fas fa-running"></i>Physiotherapist</h2>
+<ul>
+<li>Rehabilitation Therapy</li>
+<li>Mobility Improvement</li>
+<li>Exercise Programs</li>
+<li>Post-Injury Care</li>
+</ul>
+<span class="read-more"
+data-title="Physiotherapist"
+data-text="Our physiotherapy department focuses on restoring movement and physical function through personalized rehabilitation programs. We help patients recover from injuries, surgeries, and chronic conditions, improving mobility, strength, and overall quality of life.">
+Click for Details
+</span>
 </div>
 </div>
 
 </div>
 </section>
+
+<!--modal popup-->
+<div id="detailsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
 
 <footer class="footer">
 <p>© 2026 MediCare Plus. All Rights Reserved.</p>
@@ -427,6 +634,30 @@ navMenu.classList.remove("active");
 });
 });
 
+</script>
+
+<!-- 🔽 ADD BEFORE </body> (after your existing script) -->
+<script>
+const modal = document.getElementById("detailsModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const closeBtn = document.querySelector(".close-btn");
+
+document.querySelectorAll(".read-more").forEach(btn => {
+  btn.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalTitle.innerText = btn.getAttribute("data-title");
+    modalText.innerText = btn.getAttribute("data-text");
+  });
+});
+
+closeBtn.onclick = () => modal.style.display = "none";
+
+window.onclick = (e) => {
+  if(e.target == modal){
+    modal.style.display = "none";
+  }
+};
 </script>
 
 </body>
