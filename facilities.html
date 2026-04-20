@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facilities | NSK Hospital</title>
+    <title>Facilities | NS Kumudham Hospital</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
@@ -83,6 +83,27 @@
             object-fit: cover;
             border-radius: 8px;
        }
+
+       .logo-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-ns {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.logo-right {
+  display: flex;
+  gap: 5px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 1.7rem;
+}
 
         .logo i {
             color: #e63946;
@@ -301,6 +322,28 @@
 
         @media(max-width:768px) {
 
+            .logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-ns {
+  font-size: 2.3rem;
+  font-weight: 700; /* BIG NS */
+}
+
+.logo-right {
+  display: flex;
+  flex-direction: column; /* Kumudham ↓ Hospital */
+  line-height: 1.1;
+  margin-left: 4px;
+}
+
+.logo-top,
+.logo-bottom {
+  font-size: 0.85rem;
+}
+
            .nav-menu {
 position: fixed;
 top: 80px;
@@ -362,9 +405,17 @@ box-shadow: 0 0 20px rgba(0,0,0,0.1);
         <nav class="navbar">
 
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.jpeg" class="logo-img">
-                NSK Hospital
-            </a>
+  <img src="assets/images/logo.jpeg" class="logo-img">
+
+  <div class="logo-text">
+    <span class="logo-ns">NS</span>
+
+    <div class="logo-right">
+      <span class="logo-top">Kumudham</span>
+      <span class="logo-bottom">Hospital</span>
+    </div>
+  </div>
+</a>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
