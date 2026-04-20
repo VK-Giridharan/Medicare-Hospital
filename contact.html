@@ -370,50 +370,61 @@ margin-top:20px;
 
 <div class="col-lg-7">
 
-<div class="form-card">
+    <div class="form-card">
+        <h4 class="mb-4 text-primary">Fill The Details</h4>
 
-<h4 class="mb-4 text-primary">Fill The Details</h4>
+        <form onsubmit="sendMail(event)">
 
-<form>
+            <div class="mb-3">
+                <label>Name</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
 
-<div class="mb-3">
-<label>Name</label>
-<input type="text" class="form-control">
-</div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
 
-<div class="mb-3">
-<label>Email</label>
-<input type="email" class="form-control">
-</div>
+            <div class="mb-3">
+                <label>Mobile</label>
+                <input type="text" id="mobile" class="form-control" required>
+            </div>
 
-<div class="mb-3">
-<label>Mobile</label>
-<input type="text" class="form-control">
-</div>
+            <div class="mb-3">
+                <label>Message</label>
+                <textarea id="message" class="form-control" rows="4" required></textarea>
+            </div>
 
-<!-- <div class="mb-3">
-<label>Location</label>
-<select class="form-select">
-<option>Select Location</option>
-<option>Madurai</option>
-<option>Chennai</option>
-<option>Coimbatore</option>
-<option>Trichy</option>
-</select>
-</div> -->
+            <button type="submit" class="btn-submit">Send Message</button>
 
-<div class="mb-3">
-<label>Message</label>
-<textarea class="form-control" rows="4"></textarea>
-</div>
-
-<button class="btn-submit">Send Message</button>
-
-</form>
+        </form>
+    </div>
 
 </div>
 
-</div>
+<script>
+function sendMail(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    var message = document.getElementById("message").value;
+
+    var subject = "New Contact Form Message";
+
+    var body = "Name: " + name + "%0D%0A"
+             + "Email: " + email + "%0D%0A"
+             + "Mobile: " + mobile + "%0D%0A"
+             + "Message: " + message;
+
+    var mailtoLink = "mailto:drselvikumudhamhos@gmail.com"
+                   + "?subject=" + subject
+                   + "&body=" + body;
+
+    window.location.href = mailtoLink;
+}
+</script>
 
 <!-- CONTACT INFO -->
 
@@ -425,14 +436,14 @@ margin-top:20px;
 
 <p><i class="bi bi-telephone-fill"></i> 04282253635</p>
 <p><i class="bi bi-phone-fill"></i> 9842853634</p>
-<p><i class="fas fa-envelope"></i> support@mehospitals.com</p>
+<p><i class="fas fa-envelope"></i> drselvikumudhamhos@gmail.com</p>
 <p><i class="fas fa-location-dot"></i> 42, Dr.Varadharajulu street, 
-    <br>Jothi Nagar, Womans police station near, Attur, <br>Tamil Nadu - 636102</p>
+    <br>Jothi Nagar, Women police station opp, Attur, <br>Tamil Nadu - 636102</p>
 
 <div class="social-icons mt-3">
 
-<!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
-<a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="https://wa.me/919842853634" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.instagram.com/dr.v.sk?igsh=MTJvaWkwcWIybHd4Mg==" target="_blank"><i class="fab fa-instagram"></i></a>
 <!-- <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 <a href="#"><i class="fab fa-facebook"></i></a> -->
 
